@@ -15,7 +15,11 @@
       "baseHp": 40,
       "baseAttack": 60,
       "growthHp": 2,
-      "growthAttack": 3
+      "growthAttack": 3,
+      "weaknesses": [
+        "Eau",
+        "Roche"
+      ]
     },
     {
       "id": 2,
@@ -24,7 +28,11 @@
       "baseHp": 70,
       "baseAttack": 30,
       "growthHp": 4,
-      "growthAttack": 1
+      "growthAttack": 1,
+      "weaknesses": [
+        "Plante",
+        "Electrik"
+      ]
     },
     {
       "id": 3,
@@ -33,7 +41,10 @@
       "baseHp": 60,
       "baseAttack": 40,
       "growthHp": 3,
-      "growthAttack": 2
+      "growthAttack": 2,
+      "weaknesses": [
+        "Feu"
+      ]
     },
     {
       "id": 4,
@@ -42,7 +53,10 @@
       "baseHp": 45,
       "baseAttack": 55,
       "growthHp": 2,
-      "growthAttack": 3
+      "growthAttack": 3,
+      "weaknesses": [
+        "Roche"
+      ]
     },
     {
       "id": 5,
@@ -51,7 +65,8 @@
       "baseHp": 30,
       "baseAttack": 70,
       "growthHp": 1,
-      "growthAttack": 4
+      "growthAttack": 4,
+      "weaknesses": []
     },
     {
       "id": 6,
@@ -60,7 +75,11 @@
       "baseHp": 80,
       "baseAttack": 20,
       "growthHp": 5,
-      "growthAttack": 0
+      "growthAttack": 0,
+      "weaknesses": [
+        "Eau",
+        "Plante"
+      ]
     }
   ],
   "creatures": [
@@ -71,8 +90,8 @@
       "type1": "Feu",
       "hp": 40,
       "attack": 60,
-      "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-      "shinyImageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png",
+      "imageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/13/regular.png",
+      "shinyImageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/13/shiny.png",
       "isFavorite": false,
       "level": 1,
       "currentClicks": 0
@@ -84,8 +103,8 @@
       "type1": "Eau",
       "hp": 70,
       "attack": 30,
-      "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
-      "shinyImageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/7.png",
+      "imageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/14/regular.png",
+      "shinyImageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/14/shiny.png",
       "isFavorite": true,
       "level": 3,
       "currentClicks": 5
