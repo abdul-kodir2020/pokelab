@@ -1,15 +1,19 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "dresseur",
-      "email": "dresseur@pokelab.com",
       "password": "test"
+    },
+    {
+      "id": "d673",
+      "username": "abdul-kodir",
+      "password": "azertyui"
     }
   ],
   "types": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Feu",
       "color": "#F08030",
       "baseHp": 40,
@@ -22,7 +26,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Eau",
       "color": "#6890F0",
       "baseHp": 70,
@@ -35,7 +39,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Plante",
       "color": "#78C850",
       "baseHp": 60,
@@ -47,7 +51,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Electrik",
       "color": "#F8D030",
       "baseHp": 45,
@@ -59,7 +63,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Psy",
       "color": "#F85888",
       "baseHp": 30,
@@ -69,7 +73,7 @@
       "weaknesses": []
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Roche",
       "color": "#B8A038",
       "baseHp": 80,
@@ -84,7 +88,7 @@
   ],
   "creatures": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "name": "MonStarter",
       "type1": "Feu",
@@ -97,7 +101,7 @@
       "currentClicks": 0
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 1,
       "name": "Hydra",
       "type1": "Eau",
