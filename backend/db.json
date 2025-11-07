@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "dresseur",
+      "email": "dresseur@pokelab.com",
+      "password": "test"
+    }
+  ],
+  "types": [
+    {
+      "id": 1,
+      "name": "Feu",
+      "color": "#F08030",
+      "baseHp": 40,
+      "baseAttack": 60,
+      "growthHp": 2,
+      "growthAttack": 3
+    },
+    {
+      "id": 2,
+      "name": "Eau",
+      "color": "#6890F0",
+      "baseHp": 70,
+      "baseAttack": 30,
+      "growthHp": 4,
+      "growthAttack": 1
+    },
+    {
+      "id": 3,
+      "name": "Plante",
+      "color": "#78C850",
+      "baseHp": 60,
+      "baseAttack": 40,
+      "growthHp": 3,
+      "growthAttack": 2
+    },
+    {
+      "id": 4,
+      "name": "Electrik",
+      "color": "#F8D030",
+      "baseHp": 45,
+      "baseAttack": 55,
+      "growthHp": 2,
+      "growthAttack": 3
+    },
+    {
+      "id": 5,
+      "name": "Psy",
+      "color": "#F85888",
+      "baseHp": 30,
+      "baseAttack": 70,
+      "growthHp": 1,
+      "growthAttack": 4
+    },
+    {
+      "id": 6,
+      "name": "Roche",
+      "color": "#B8A038",
+      "baseHp": 80,
+      "baseAttack": 20,
+      "growthHp": 5,
+      "growthAttack": 0
+    }
+  ],
+  "creatures": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "MonStarter",
+      "type1": "Feu",
+      "hp": 40,
+      "attack": 60,
+      "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+      "shinyImageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png",
+      "isFavorite": false,
+      "level": 1,
+      "currentClicks": 0
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "Hydra",
+      "type1": "Eau",
+      "hp": 70,
+      "attack": 30,
+      "imageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+      "shinyImageUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/7.png",
+      "isFavorite": true,
+      "level": 3,
+      "currentClicks": 5
+    }
+  ]
+}
