@@ -5,6 +5,7 @@ import { RegisterComponent } from './auth/register/register';
 import { authGuard } from './shared/guards/auth.guard';
 import { Home } from './home/home';
 import { PokedexComponent } from './pokedex/pokedex';
+import { PokemonFormComponent } from './pokedex-form/pokedex-form';
 
 
 export const routes: Routes = [
@@ -21,13 +22,13 @@ export const routes: Routes = [
     component: PokedexComponent, 
     canActivate: [authGuard] 
   },
-  /*
+
   { 
-    path: 'creer', 
-    component: CreateCreatureComponent, 
+    path: 'pokedex/creer', 
+    component: PokemonFormComponent, 
     canActivate: [authGuard] 
   },
-  */
+
 ];
 
 @NgModule({

@@ -11,3 +11,14 @@ export interface Pokemon {
     level: number;
     currentClicks: number;
 }
+
+export interface PokemonType {
+    id: string;
+    name: string;
+    color: string;
+    baseHp: number;
+    baseAttack: number;
+    growthHp: number;
+    growthAttack: number;
+    weaknesses: string[];
+}
