@@ -28,6 +28,11 @@ export const routes: Routes = [
     component: PokemonFormComponent, 
     canActivate: [authGuard] 
   },
+  { 
+    path: 'creatures/:id/edit',
+    component: PokemonFormComponent,
+    canActivate: [authGuard]
+  }
 
 ];
 

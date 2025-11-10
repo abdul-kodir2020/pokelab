@@ -52,4 +52,12 @@ export class Pokedex {
     const userId = typeof rawUserId === 'string' ? parseInt(rawUserId, 10) : rawUserId;
     return this.http.get<Pokemon[]>(`${this.base}?userId=${userId}`);
   }
+
+  getById(id: number | string) {
+    return this.http.get<Pokemon>(`${this.base}/${id}`);
+  }
+
+  update(id: number | string, partial: Partial<Pokemon>) {
+    return this.http.patch<Pokemon>(`${this.base}/${id}`, partial);
+  }
 }

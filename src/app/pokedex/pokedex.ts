@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Pokedex } from '../shared/services/pokedex';
 import { Pokemon } from '../shared/models/pokemon.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pokedex',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './pokedex.html',
   styleUrls: ['./pokedex.css'],
 })

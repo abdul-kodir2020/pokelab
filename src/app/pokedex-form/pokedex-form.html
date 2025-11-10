@@ -1,66 +1,57 @@
 <section class="container mx-auto max-w-2xl p-6">
-  <h1 class="text-2xl font-bold mb-4">Ajouter un Pokémon</h1>
+  <h1 class="text-2xl font-bold mb-4">{{ title }}</h1>
 
   <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-5">
     <div>
       <label class="block text-sm font-medium mb-1">Nom</label>
-      <input type="text" formControlName="name" class="w-full rounded-lg border p-2 focus:outline-none focus:ring" placeholder="MonStarter" />
-      <p class="text-red-600 text-sm mt-1" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
-        Nom requis (2–24 caractères).
-      </p>
+      <input type="text" formControlName="name" class="w-full rounded border p-2" />
     </div>
 
     <div>
       <label class="block text-sm font-medium mb-1">Type</label>
-      <select formControlName="type1" class="w-full rounded-lg border p-2">
+      <select formControlName="type1" class="w-full rounded border p-2">
         <option value="">— Choisir —</option>
         <option *ngFor="let t of types" [value]="t.name">{{ t.name }}</option>
       </select>
-      <p class="text-red-600 text-sm mt-1" *ngIf="form.get('type1')?.touched && form.get('type1')?.invalid">
-        Type requis.
-      </p>
     </div>
 
     <div class="grid grid-cols-2 gap-4">
       <div>
         <label class="block text-sm font-medium mb-1">PV (HP)</label>
-        <input type="number" formControlName="hp" class="w-full rounded-lg border p-2" min="1" max="255" />
+        <input type="number" formControlName="hp" class="w-full rounded border p-2" />
       </div>
       <div>
         <label class="block text-sm font-medium mb-1">Attaque</label>
-        <input type="number" formControlName="attack" class="w-full rounded-lg border p-2" min="1" max="255" />
+        <input type="number" formControlName="attack" class="w-full rounded border p-2" />
       </div>
     </div>
 
-    <p class="text-red-600 text-sm" *ngIf="form.errors?.['statsBudget']">
-      Budget de stats dépassé : {{ form.errors?.['statsBudget'].current }} / {{ form.errors?.['statsBudget'].max }}
-    </p>
-
     <div>
       <label class="block text-sm font-medium mb-1">Niveau</label>
-      <input type="number" formControlName="level" class="w-full rounded-lg border p-2" min="1" max="100" />
+      <input type="number" formControlName="level" class="w-full rounded border p-2" />
     </div>
 
     <div>
       <label class="block text-sm font-medium mb-1">Image (URL)</label>
-      <input type="url" formControlName="imageUrl" class="w-full rounded-lg border p-2" placeholder="https://…" />
+      <input type="url" formControlName="imageUrl" class="w-full rounded border p-2" />
     </div>
 
     <div>
-      <label class="block text-sm font-medium mb-1">Image shiny (URL) — optionnel</label>
-      <input type="url" formControlName="shinyImageUrl" class="w-full rounded-lg border p-2" placeholder="https://…" />
+      <label class="block text-sm font-medium mb-1">Image shiny (URL)</label>
+      <input type="url" formControlName="shinyImageUrl" class="w-full rounded border p-2" />
     </div>
 
-    <div class="flex items-center gap-4">
-      <img *ngIf="form.value.imageUrl" [src]="form.value.imageUrl" alt="preview" class="w-16 h-16 object-contain bg-gray-50 rounded" />
-      <p class="text-sm text-gray-500">Aperçu</p>
+    <div class="flex items-center gap-3">
+      <img *ngIf="form.value.imageUrl" [src]="form.value.imageUrl" class="w-16 h-16 object-contain bg-gray-50 rounded" />
+      <span class="text-gray-500 text-sm">Aperçu</span>
     </div>
 
     <div class="flex gap-2">
-      <button type="submit" class="px-4 py-2 rounded-lg bg-blue-600 text-white cursor-pointer disabled:opacity-50" [disabled]="form.invalid">
-        Créer
+      <button type="submit" class="px-4 py-2 rounded bg-blue-600 text-white cursor-pointer disabled:opacity-50"
+              [disabled]="form.invalid">
+        {{ submitLabel }}
       </button>
-      <a routerLink="/pokedex" class="px-4 py-2 rounded-lg border cursor-pointer">Annuler</a>
+      <a routerLink="/pokedex" class="px-4 py-2 rounded border cursor-pointer">Annuler</a>
     </div>
   </form>
 </section>
