@@ -12,6 +12,8 @@ export interface Pokemon {
     currentClicks: number;
 }
 
+export type CreatePokemon = Omit<Pokemon, 'id' | 'userId' | 'isFavorite' | 'currentClicks'>;
+
 export interface PokemonType {
     id: string;
     name: string;

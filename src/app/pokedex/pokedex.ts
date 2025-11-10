@@ -18,8 +18,27 @@ export class PokedexComponent implements OnInit {
   constructor(private pokedex: Pokedex) {}
 
   ngOnInit(): void {
-    this.pokemons$ = this.pokedex.getUserPokemons();
+    this.load();
   }
 
+  load() { this.pokemons$ = this.pokedex.getUserPokemons(); }
+
   trackById = (_: number, p: Pokemon) => p.id;
+
+  onDelete(p: Pokemon, ev?: Event) {
+    ev?.preventDefault();
+    ev?.stopPropagation();
+    if (!confirm(`Supprimer "${p.name}" ?`)) return;
+
+    this.pokedex.remove(p.id).subscribe({
+      next: () => {
+        this.load();
+        // toast/alert si tu veux
+      },
+      error: (e) => {
+        console.error(e);
+        alert('Suppression impossible (voir console).');
+      },
+    });
+  }
 }

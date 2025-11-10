@@ -112,19 +112,6 @@
       "isFavorite": true,
       "level": 3,
       "currentClicks": 5
-    },
-    {
-      "id": 0,
-      "userId": 1,
-      "name": "azdad",
-      "type1": "Feu",
-      "hp": 40,
-      "attack": 60,
-      "imageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/13/regular.png",
-      "shinyImageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/13/shiny.png",
-      "isFavorite": false,
-      "level": 1,
-      "currentClicks": 0
     }
   ]
 }

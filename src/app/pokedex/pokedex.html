@@ -10,11 +10,9 @@
     <ng-container *ngIf="pokemons$ | async as pokemons; else loading">
         <ng-container *ngIf="pokemons.length; else empty">
             <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <li *ngFor="let p of pokemons; trackBy: trackById" class="rounded-xl shadow p-0 bg-white">
+                <li *ngFor="let p of pokemons; trackBy: trackById" class="rounded-xl shadow bg-white">
                     <a [routerLink]="['/creatures', p.id, 'edit']" class="flex items-center gap-4 p-4 block">
-                        <img [src]="p.imageUrl" [alt]="p.name"
-                            class="w-20 h-20 object-contain rounded-lg bg-gray-50 shrink-0" />
-
+                        <img [src]="p.imageUrl" [alt]="p.name" class="w-20 h-20 object-contain rounded-lg bg-gray-50" />
                         <div class="flex-1">
                             <div class="flex items-center justify-between gap-2">
                                 <h3 class="text-lg font-semibold truncate">{{ p.name }}</h3>
@@ -23,13 +21,25 @@
                                     {{ p.type1 }}
                                 </span>
                             </div>
-                            <p class="text-sm text-gray-500 mt-1">
-                                PV: {{ p.hp }} • ATK: {{ p.attack }} • Nv. {{ p.level }}
-                            </p>
+                            <p class="text-sm text-gray-500 mt-1">PV: {{ p.hp }} • ATK: {{ p.attack }} • Nv. {{ p.level
+                                }}</p>
                         </div>
                     </a>
+
+                    <div class="flex items-center justify-end gap-2 px-4 pb-4">
+                        <a [routerLink]="['/creatures', p.id, 'edit']"
+                            class="px-3 py-1.5 rounded bg-blue-600 text-white cursor-pointer hover:opacity-90">
+                            Modifier
+                        </a>
+                        <button type="button"
+                            class="px-3 py-1.5 rounded bg-red-600 text-white cursor-pointer hover:opacity-90"
+                            (click)="onDelete(p, $event)">
+                            Supprimer
+                        </button>
+                    </div>
                 </li>
             </ul>
+
         </ng-container>
     </ng-container>
 
