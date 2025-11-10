@@ -4,7 +4,8 @@ import { LoginComponent } from './auth/login/login';
 import { RegisterComponent } from './auth/register/register';
 import { authGuard } from './shared/guards/auth.guard';
 import { Home } from './home/home';
-import { Pokedex } from './pokedex/pokedex';
+import { PokedexComponent } from './pokedex/pokedex';
+
 
 export const routes: Routes = [
   // Routes publiques
@@ -17,7 +18,7 @@ export const routes: Routes = [
   
   { 
     path: 'pokedex', 
-    component: Pokedex, 
+    component: PokedexComponent, 
     canActivate: [authGuard] 
   },
   /*
