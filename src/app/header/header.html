@@ -9,10 +9,14 @@
             </a>
         </div>
         <div class="header-right">
-            <nav>
-                <a routerLink="/home" routerLinkActive="active-link">Accueil</a>
-                <a routerLink="/login" routerLinkActive="active-link">Connexion</a>
-                <a routerLink="/register" routerLinkActive="active-link">Inscription</a>
+            <nav class="flex gap-2">
+                <a routerLink="/home" routerLinkActive="active-link" class="cursor-pointer">Accueil</a>
+                @if (isLoggedIn()) {
+                    <button type="button" class="active-link cursor-pointer" (click)="logout()">Déconnexion</button>
+                } @else {
+                    <a routerLink="/login" routerLinkActive="active-link">Connexion</a>
+                    <a routerLink="/register" routerLinkActive="active-link">Inscription</a>                    
+                }
             </nav>
         </div>
     </div>

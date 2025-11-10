@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,14 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.css',
 })
 export class Header {
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
+  isLoggedIn = this.authService.isLoggedIn;
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
 
 }
