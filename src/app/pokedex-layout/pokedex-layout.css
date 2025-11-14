@@ -1,0 +1,22 @@
+.fond-incliné{
+    position: absolute;
+    height: 62vh;
+    width: 100%;
+    margin-top: -10vh;
+    top: -10vh;
+    background-color: rgb(200, 21, 22);
+    transform: skewY(-15deg);
+    z-index: -1;
+}
+
+@media (min-width: 1024px) {
+    .fond-incliné {
+        transform: skewY(-3deg);
+    }
+}
+
+@media (min-width: 768px) {
+    .fond-incliné {
+        transform: skewY(-3deg);
+    }
+}
