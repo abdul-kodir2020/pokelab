@@ -1,0 +1,139 @@
+.pokedex-page header {
+    padding: 4vh 5vw 0px;
+    width: 100%;
+    display: flex;
+    gap: 3vh;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.lang-selector {
+    align-self: flex-end;
+    width: 100px;
+    position: relative;
+}
+
+.selected-lang {
+    cursor: pointer;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 6px 14px 6px 10px;
+    font-family: "Protest Strike", Inter, sans-serif;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 6rem;
+    height: 2.5rem;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+
+.sticky-bar{
+    position: sticky;
+    top: 0px;
+    padding: 3.5vh 0px 2vh;
+    width: 100%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-bottom: 3vh;
+    z-index: 10;
+    background-color: rgb(200, 21, 22);
+}
+
+.search{
+    position: relative;
+    width: 40vw;
+}
+
+.input-search{
+    position: relative;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 60px;
+    box-shadow: rgb(0, 0, 0) 2px 2px 0px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    padding: 15px 100px 15px 18px;
+    z-index: 4;
+}
+
+.icons-search {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 5px;
+    z-index: 4;
+}
+
+.css-5d1ynz {
+    width: 38px;
+    height: 38px;
+}
+
+.css-5d1ynz {
+    width: 38px;
+    height: 38px;
+}
+
+@media (max-width: 1024px) {
+    .search {
+        width: 60vw;
+    }
+
+    .input-search {
+        font-size: 1.4rem;
+        padding: 14px 120px 14px 22px;
+    }
+
+    .css-5d1ynz {
+        width: 38px;
+        height: 38px;
+    }
+
+    .css-5d1ynz {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search {
+        width: 50vw;
+    }
+
+    .input-search {
+        font-size: 1.2rem;
+        padding: 12px 100px 12px 18px;
+    }
+
+    .css-5d1ynz {
+        width: 35px;
+        height: 35px;
+    }
+
+    .css-5d1ynz{
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 585px) {
+    .search {
+        width: 70vw;
+    }
+}

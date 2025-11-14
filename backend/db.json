@@ -112,6 +112,19 @@
       "isFavorite": true,
       "level": 3,
       "currentClicks": 5
+    },
+    {
+      "id": "29c1",
+      "name": "dsfgfgbfcgb",
+      "type1": "Electrik",
+      "hp": 45,
+      "attack": 55,
+      "level": 1,
+      "imageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/26/regular.png",
+      "shinyImageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/26/regular.png",
+      "userId": 1,
+      "isFavorite": false,
+      "currentClicks": 0
     }
   ]
 }

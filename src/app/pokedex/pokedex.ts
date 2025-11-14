@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 import { Pokedex } from '../shared/services/pokedex';
 import { Pokemon } from '../shared/models/pokemon.model';
 import { RouterModule } from '@angular/router';
+import { Logo } from '../components/logo/logo';
+import { PokemonList } from '../components/pokemon-list/pokemon-list';
 
 @Component({
   selector: 'app-pokedex',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, Logo, PokemonList],
   templateUrl: './pokedex.html',
   styleUrls: ['./pokedex.css'],
 })

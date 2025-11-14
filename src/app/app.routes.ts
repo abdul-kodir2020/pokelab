@@ -6,6 +6,7 @@ import { authGuard } from './shared/guards/auth.guard';
 import { Home } from './home/home';
 import { PokedexComponent } from './pokedex/pokedex';
 import { PokemonFormComponent } from './pokedex-form/pokedex-form';
+import { PokedexLayout } from './pokedex-layout/pokedex-layout';
 
 
 export const routes: Routes = [
@@ -17,22 +18,37 @@ export const routes: Routes = [
   // Routes protégées par le AuthGuard
   // Décommentez-les lorsque vos composants seront créés
   
-  { 
+  {
     path: 'pokedex', 
-    component: PokedexComponent, 
-    canActivate: [authGuard] 
+    component: PokedexLayout,
+    canActivate: [authGuard],
+    children: [
+      {
+        path: '', 
+        component: PokedexComponent
+      },
+      {
+        path: 'creer', 
+        component: PokemonFormComponent
+      }
+    ]
   },
+  // { 
+  //   path: 'pokedex', 
+  //   component: PokedexComponent, 
+  //   canActivate: [authGuard] 
+  // },
 
-  { 
-    path: 'pokedex/creer', 
-    component: PokemonFormComponent, 
-    canActivate: [authGuard] 
-  },
-  { 
-    path: 'creatures/:id/edit',
-    component: PokemonFormComponent,
-    canActivate: [authGuard]
-  }
+  // { 
+  //   path: 'pokedex/creer', 
+  //   component: PokemonFormComponent, 
+  //   canActivate: [authGuard] 
+  // },
+  // { 
+  //   path: 'creatures/:id/edit',
+  //   component: PokemonFormComponent,
+  //   canActivate: [authGuard]
+  // }
 
 ];
 

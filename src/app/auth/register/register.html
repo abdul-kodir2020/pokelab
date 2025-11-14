@@ -1,8 +1,6 @@
 <div class="auth-page">
   <div class="auth-logo">
-    <a routerLink="/">
-      <img src="img/pokelab-logo.png" alt="PokéLab Logo">
-    </a>
+    <app-logo></app-logo>
   </div>
   <div class="auth-left">
     <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-form">
