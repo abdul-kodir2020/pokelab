@@ -1,23 +1,19 @@
-<div class="">
-    <div class="header flex justify-between items-center p-4 container mx-auto px-4">
+<div class="header-page" *ngIf="!isHomePage()">
+    <div class="header-container">
         <div class="header-left">
-            <a routerLink="/pokedex" class="header-home-link">Mon Pokedex</a>
+            <a routerLink="/pokedex" class="header-btn">Mon Pokedex</a>
         </div>
         <div class="header-center">
             <a routerLink="/" class="cursor-pointer">
-                <img src="img/pokelab-logo.png" alt="PokéLab Logo" class="header-logo h-16">
+                <img src="img/pokelab-logo.png" alt="PokéLab Logo" class="header-logo">
             </a>
         </div>
         <div class="header-right">
-            <nav class="flex gap-2">
-                <a routerLink="/home" routerLinkActive="active-link" class="cursor-pointer">Accueil</a>
-                @if (isLoggedIn()) {
-                    <button type="button" class="active-link cursor-pointer" (click)="logout()">Déconnexion</button>
-                } @else {
-                    <a routerLink="/login" routerLinkActive="active-link">Connexion</a>
-                    <a routerLink="/register" routerLinkActive="active-link">Inscription</a>                    
-                }
-            </nav>
+            @if (isLoggedIn()) {
+                <button type="button" class="header-btn" (click)="logout()">Se Déconnecter</button>
+            } @else {
+                <button type="button" class="header-btn" (click)="goToLogin()">Mon Compte</button>
+            }
         </div>
     </div>
 </div>

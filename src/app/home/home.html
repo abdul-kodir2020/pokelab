@@ -1,6 +1,63 @@
-<div class="home-container">
-  
-  <header class="home-header">
+<div class="home-container container_page_1">
+  <div class="btns-section">
+    <a routerLink="/pokedex" class="header-btn">Mon Pokedex</a>
+    <a routerLink="/login" class="header-btn">Mon Compte</a>
+  </div>
+  <div class="home-top-logo">
+    <a routerLink="/">
+      <img src="img/pokelab-logo.png" alt="PokéLab Logo">
+    </a>
+  </div>
+  <div class="column"
+        [class.active]="activeColumn === 'col1'" 
+       (mouseenter)="activeColumn = 'col1'">
+      <div class="content">
+          <h1>1</h1>
+          <div class="box">
+              <h2>Bienvenue sur PokeLab !</h2>
+              <p>Ici, vous n'êtes pas un simple dresseur, vous êtes un créateur. Donnez vie à des créatures uniques, définissez leurs statistiques par leur type et choisissez leur apparence.</p>
+          </div>
+      </div>
+      <div class="bg bg1"></div>
+  </div>
+  <div class="column"
+        [class.active]="activeColumn === 'col2'" 
+       (mouseenter)="activeColumn = 'col2'">
+      <div class="content">
+          <h1>2</h1>
+          <div class="box">
+              <h2>Créez votre Compte</h2>
+              <p>Pour sauvegarder vos créations, une inscription est nécessaire. Créez votre compte dresseur en quelques secondes. C'est rapide, sécurisé, et essentiel pour ne jamais perdre vos données.</p>
+          </div>
+      </div>
+      <div class="bg bg2"></div>
+  </div>
+  <div class="column" 
+       [class.active]="activeColumn === 'col3'" 
+       (mouseenter)="activeColumn = 'col3'">
+      <div class="content">
+          <h1>3</h1>
+          <div class="box">
+              <h2>Le Labo de Création</h2>
+              <p>Une fois connecté, rendez-vous dans "Créer". Choisissez un nom, une apparence parmi 50 sprites, et un type. Le type (Feu, Eau...) définit automatiquement les stats de base.</p>
+          </div>
+      </div>
+      <div class="bg bg3"></div>
+  </div>
+  <div class="column" 
+       [class.active]="activeColumn === 'col4'" 
+       (mouseenter)="activeColumn = 'col4'">
+      <div class="content">
+          <h1>4</h1>
+          <div class="box">
+              <h2>Votre Pokédex</h2>
+              <p>Retrouvez vos créations dans votre Pokédex. Entraînez-les (10 clics = 1 niveau), modifiez leur nom, ou marquez vos favoris. C'est votre collection !</p>
+          </div>
+      </div>
+      <div class="bg bg4"></div>
+  </div>
+
+  <!-- <header class="home-header">
     <h1>Bienvenue sur PokéLab !</h1>
     <p>Créez, entraînez et gérez votre collection de créatures personnalisées.</p>
   </header>
@@ -24,6 +81,6 @@
     <p>Commencez votre aventure dès maintenant.</p>
     <a routerLink="/login" class="btn btn-primary">Connexion</a>
     <a routerLink="/register" class="btn btn-secondary">Inscription</a>
-  </section>
+  </section> -->
 
 </div>

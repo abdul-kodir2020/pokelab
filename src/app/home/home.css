@@ -1,4 +1,4 @@
-.home-container {
+/* .home-container {
     text-align: center;
     padding: 40px 20px;
     max-width: 960px;
@@ -59,4 +59,181 @@
 
 .btn-secondary:hover {
     background-color: #5a6268;
+} */
+
+.container_page_1 {
+    width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+/*     scroll-snap-align: center; */
+    overflow: hidden;
+  position: relative;
+}
+
+.container_page_1 .column {
+    width: 25%;
+    height: 100%;
+    float: left;
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.container_page_1 .column:last-child {
+    border-right: none;
+}
+
+.container_page_1 .column .content {
+    position: relative;
+    height: 100%;
+}
+
+.container_page_1 .column .content h1 {
+    position: absolute;
+    top: 50%;
+    height: calc(100vh/3);
+    transform: translateY(-50%);
+    width: 100%;
+    background: rgba(0, 0, 0, .15);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, .4);
+    font-size: 10em;
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.container_page_1 .column .content .box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(100%);
+    box-sizing: border-box;
+    height: calc(100vh/3);
+    width: 100%;
+    padding: 15px;
+    background: rgb(230, 188, 47);
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    color: white;
+    transition: 0.5s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container_page_1 .column.active .content .box {
+    opacity: 1;
+    transform: translateY(-50%);
+}
+
+.container_page_1 .column .content .box h2 {
+    margin: 0;
+    padding: 0;
+    font-size:1.5em;
+    font-weight: bold;
+}
+
+.container_page_1 .column .content .box p {
+    font-size: 16px;
+}
+
+.container_page_1 .column .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container_page_1 .column.active .bg.bg1 {
+    background-image: url('/img/1351987.jpeg');
+    background-size: cover;
+/*     background-attachment: fixed; */
+    background-position: center;
+    transition: 0.5s;
+}
+.container_page_1 .column.active .bg.bg2 {
+    background: url('/img/1070622.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    transition: 0.5s;
+}
+.container_page_1 .column.active .bg.bg3 {
+    background: url('/img/1073996.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    transition: 0.5s;
+}
+.container_page_1 .column.active .bg.bg4 {
+    background: url('/img/1243302.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    transition: 0.5s;
+}
+
+/* Logo top centered on home */
+.home-top-logo {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-top-logo img {
+    height: 90px;
+    width: auto;
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.25));
+}
+
+@media (max-width: 768px) {
+    .home-top-logo img {
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-top-logo img {
+        height: 56px;
+    }
+}
+
+.header-btn {
+    background-color: rgb(230, 187, 47);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.875rem;
+}
+
+.header-btn:hover {
+    background-color: rgb(255, 198, 11);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+
+.btns-section{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
 }

@@ -1,38 +1,42 @@
-<div class="auth-container">
-  <form [formGroup]="loginForm" (ngSubmit)="login()" class="auth-form">
-    <h2>Connexion</h2>
+<div class="auth-page">
+  <div class="auth-logo">
+    <a routerLink="/">
+      <img src="img/pokelab-logo.png" alt="PokéLab Logo">
+    </a>
+  </div>
+  <div class="auth-left">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="auth-form">
+      <h2>Connexion</h2>
 
-    <!-- Champ Username -->
-    <div class="form-group">
-      <label for="username">Nom d'utilisateur</label>
-      <input id="username" type="text" formControlName="username">
-      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
-        Le nom d'utilisateur est requis.
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input id="username" type="text" formControlName="username">
+        <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+          Le nom d'utilisateur est requis.
+        </div>
       </div>
-    </div>
 
-    <!-- Champ Password -->
-    <div class="form-group">
-      <label for="password">Mot de passe</label>
-      <input id="password" type="password" formControlName="password">
-      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
-        Le mot de passe est requis.
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input id="password" type="password" formControlName="password">
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+          Le mot de passe est requis.
+        </div>
       </div>
-    </div>
 
-    <!-- Message d'erreur global -->
-    <div *ngIf="errorMessage" class="error-message global-error">
-      {{ errorMessage }}
-    </div>
+      <div *ngIf="errorMessage" class="error-message global-error">
+        {{ errorMessage }}
+      </div>
 
-    <!-- Bouton de soumission -->
-    <button type="submit" [disabled]="loginForm.invalid" class="auth-button">
-      Se connecter
-    </button>
+      <button type="submit" [disabled]="loginForm.invalid" class="auth-button">
+        Se connecter
+      </button>
 
-    <!-- Lien vers l'inscription -->
-    <p class="auth-link">
-      Pas encore de compte ? <a routerLink="/register">Inscrivez-vous</a>
-    </p>
-  </form>
+      <p class="auth-link">
+        Pas encore de compte ? <a routerLink="/register">Inscrivez-vous</a>
+      </p>
+    </form>
+  </div>
+
+  <div class="auth-right" aria-hidden="true"></div>
 </div>

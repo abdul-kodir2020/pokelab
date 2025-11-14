@@ -1,43 +1,48 @@
-<div class="auth-container">
-  <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-form">
-    <h2>Inscription</h2>
+<div class="auth-page">
+  <div class="auth-logo">
+    <a routerLink="/">
+      <img src="img/pokelab-logo.png" alt="PokéLab Logo">
+    </a>
+  </div>
+  <div class="auth-left">
+    <form [formGroup]="registerForm" (ngSubmit)="register()" class="auth-form">
+      <h2>Inscription</h2>
 
-    <!-- Champ Username -->
-    <div class="form-group">
-      <label for="username">Nom d'utilisateur</label>
-      <input id="username" type="text" formControlName="username">
-      <div *ngIf="registerForm.get('username')?.errors?.['required'] && registerForm.get('username')?.touched" class="error-message">
-        Requis.
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input id="username" type="text" formControlName="username">
+        <div *ngIf="registerForm.get('username')?.errors?.['required'] && registerForm.get('username')?.touched" class="error-message">
+          Requis.
+        </div>
+        <div *ngIf="registerForm.get('username')?.errors?.['minlength'] && registerForm.get('username')?.touched" class="error-message">
+          3 caractères minimum.
+        </div>
       </div>
-      <div *ngIf="registerForm.get('username')?.errors?.['minlength'] && registerForm.get('username')?.touched" class="error-message">
-        3 caractères minimum.
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input id="password" type="password" formControlName="password">
+        <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="error-message">
+          Requis.
+        </div>
+         <div *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched" class="error-message">
+          4 caractères minimum.
+        </div>
       </div>
-    </div>
 
-    <!-- Champ Password -->
-    <div class="form-group">
-      <label for="password">Mot de passe</label>
-      <input id="password" type="password" formControlName="password">
-      <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="error-message">
-        Requis.
+      <div *ngIf="errorMessage" class="error-message global-error">
+        {{ errorMessage }}
       </div>
-       <div *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched" class="error-message">
-        4 caractères minimum.
-      </div>
-    </div>
 
-    <!-- Message d'erreur global -->
-    <div *ngIf="errorMessage" class="error-message global-error">
-      {{ errorMessage }}
-    </div>
+      <button type="submit" [disabled]="registerForm.invalid" class="auth-button">
+        S'inscrire
+      </button>
 
-    <button type="submit" [disabled]="registerForm.invalid" class="auth-button">
-      S'inscrire
-    </button>
+      <p class="auth-link">
+        Déjà un compte ? <a routerLink="/login">Connectez-vous</a>
+      </p>
+    </form>
+  </div>
 
-    <!-- Lien vers la connexion -->
-    <p class="auth-link">
-      Déjà un compte ? <a routerLink="/login">Connectez-vous</a>
-    </p>
-  </form>
+  <div class="auth-right" aria-hidden="true"></div>
 </div>
