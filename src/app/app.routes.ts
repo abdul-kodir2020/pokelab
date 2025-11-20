@@ -7,6 +7,7 @@ import { Home } from './home/home';
 import { PokedexComponent } from './pokedex/pokedex';
 import { PokemonFormComponent } from './pokedex-form/pokedex-form';
 import { PokedexLayout } from './pokedex-layout/pokedex-layout';
+import { PokemonDetailComponent } from './pokedex/pokemon-detail/pokemon-detail';
 
 
 export const routes: Routes = [
@@ -29,6 +30,14 @@ export const routes: Routes = [
       },
       {
         path: 'creer', 
+        component: PokemonFormComponent
+      },
+      {
+        path: ':id',
+        component: PokemonDetailComponent
+      },
+      {
+        path: ':id/edit',
         component: PokemonFormComponent
       }
     ]

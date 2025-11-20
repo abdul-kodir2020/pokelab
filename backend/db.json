@@ -89,42 +89,449 @@
   "creatures": [
     {
       "id": "1",
-      "userId": 1,
+      "userId": "1",
       "name": "MonStarter",
-      "type1": "Feu",
+      "typeId": "1",
+      "evolutionLineId": "2",
       "hp": 40,
       "attack": 60,
-      "imageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/13/regular.png",
-      "shinyImageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/13/shiny.png",
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/4.webp",
       "isFavorite": false,
       "level": 1,
       "currentClicks": 0
-    },
-    {
-      "id": "2",
-      "userId": 1,
-      "name": "Hydra",
-      "type1": "Eau",
-      "hp": 70,
-      "attack": 30,
-      "imageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/14/regular.png",
-      "shinyImageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/14/shiny.png",
-      "isFavorite": true,
-      "level": 3,
-      "currentClicks": 5
     },
     {
       "id": "29c1",
+      "userId": "1",
       "name": "dsfgfgbfcgb",
-      "type1": "Electrik",
+      "typeId": "4",
+      "evolutionLineId": "22",
       "hp": 45,
       "attack": 55,
       "level": 1,
-      "imageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/26/regular.png",
-      "shinyImageUrl": "https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/26/regular.png",
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/172.webp",
+      "isFavorite": false,
+      "currentClicks": 0
+    },
+    {
+      "id": "b200",
+      "name": "roman dmitri",
+      "typeId": "1",
+      "evolutionLineId": "30",
+      "hp": 40,
+      "attack": 60,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/255.webp",
       "userId": 1,
       "isFavorite": false,
       "currentClicks": 0
+    },
+    {
+      "id": "cc29",
+      "name": "test",
+      "typeId": "6",
+      "evolutionLineId": "15",
+      "hp": 80,
+      "attack": 20,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/69.webp",
+      "userId": 1,
+      "isFavorite": false,
+      "currentClicks": 0
+    },
+    {
+      "id": "42c3",
+      "name": "planta",
+      "typeId": "3",
+      "evolutionLineId": "19",
+      "hp": 60,
+      "attack": 40,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/152.webp",
+      "userId": 1,
+      "isFavorite": false,
+      "currentClicks": 0
+    },
+    {
+      "id": "2d5e",
+      "name": "naky",
+      "typeId": "4",
+      "evolutionLineId": "47",
+      "hp": 45,
+      "attack": 55,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/393.webp",
+      "userId": 1,
+      "isFavorite": false,
+      "currentClicks": 0
+    }
+  ],
+  "evolution_lines": [
+    {
+      "id": "1",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/1.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/2.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/3.webp"
+    },
+    {
+      "id": "2",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/4.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/5.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/6.webp"
+    },
+    {
+      "id": "3",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/7.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/8.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/9.webp"
+    },
+    {
+      "id": "4",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/10.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/11.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/12.webp"
+    },
+    {
+      "id": "5",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/13.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/14.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/15.webp"
+    },
+    {
+      "id": "6",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/16.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/17.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/18.webp"
+    },
+    {
+      "id": "7",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/32.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/33.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/34.webp"
+    },
+    {
+      "id": "8",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/41.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/42.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/169.webp"
+    },
+    {
+      "id": "9",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/43.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/44.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/45.webp"
+    },
+    {
+      "id": "10",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/43.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/44.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/182.webp"
+    },
+    {
+      "id": "11",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/60.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/61.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/62.webp"
+    },
+    {
+      "id": "12",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/60.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/61.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/186.webp"
+    },
+    {
+      "id": "13",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/63.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/64.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/65.webp"
+    },
+    {
+      "id": "14",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/66.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/67.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/68.webp"
+    },
+    {
+      "id": "15",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/69.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/70.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/71.webp"
+    },
+    {
+      "id": "16",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/74.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/75.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/76.webp"
+    },
+    {
+      "id": "17",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/92.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/93.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/94.webp"
+    },
+    {
+      "id": "18",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/147.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/148.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/149.webp"
+    },
+    {
+      "id": "19",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/152.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/153.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/154.webp"
+    },
+    {
+      "id": "20",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/155.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/156.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/157.webp"
+    },
+    {
+      "id": "21",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/158.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/159.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/160.webp"
+    },
+    {
+      "id": "22",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/172.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/25.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/26.webp"
+    },
+    {
+      "id": "23",
+      "stage1": "https::/qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/173.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/35.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/36.webp"
+    },
+    {
+      "id": "24",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/174.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/39.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/40.webp"
+    },
+    {
+      "id": "25",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/179.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/180.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/181.webp"
+    },
+    {
+      "id": "26",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/187.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/188.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/189.webp"
+    },
+    {
+      "id": "27",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/116.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/117.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/230.webp"
+    },
+    {
+      "id": "28",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/246.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/247.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/248.webp"
+    },
+    {
+      "id": "29",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/252.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/253.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/254.webp"
+    },
+    {
+      "id": "30",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/255.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/256.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/257.webp"
+    },
+    {
+      "id": "31",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/258.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/259.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/260.webp"
+    },
+    {
+      "id": "32",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/265.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/266.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/267.webp"
+    },
+    {
+      "id": "33",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/265.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/268.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/269.webp"
+    },
+    {
+      "id": "34",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/270.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/271.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/272.webp"
+    },
+    {
+      "id": "35",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/273.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/274.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/275.webp"
+    },
+    {
+      "id": "36",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/280.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/281.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/282.webp"
+    },
+    {
+      "id": "37",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/287.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/288.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/289.webp"
+    },
+    {
+      "id": "38",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/293.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/294.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/295.webp"
+    },
+    {
+      "id": "39",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/304.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/305.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/306.webp"
+    },
+    {
+      "id": "40",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/328.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/329.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/330.webp"
+    },
+    {
+      "id": "41",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/298.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/183.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/184.webp"
+    },
+    {
+      "id": "42",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/363.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/364.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/365.webp"
+    },
+    {
+      "id": "43",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/371.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/372.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/373.webp"
+    },
+    {
+      "id": "44",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/374.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/375.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/376.webp"
+    },
+    {
+      "id": "45",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/387.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/388.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/389.webp"
+    },
+    {
+      "id": "46",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/390.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/391.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/392.webp"
+    },
+    {
+      "id": "47",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/393.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/394.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/395.webp"
+    },
+    {
+      "id": "48",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/396.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/397.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/398.webp"
+    },
+    {
+      "id": "49",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/403.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/404.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/405.webp"
+    },
+    {
+      "id": "50",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/406.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/315.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/407.webp"
+    },
+    {
+      "id": "51",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/440.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/113.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/242.webp"
+    },
+    {
+      "id": "52",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/443.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/444.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/445.webp"
+    },
+    {
+      "id": "53",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/220.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/221.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/473.webp"
+    },
+    {
+      "id": "54",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/137.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/233.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/474.webp"
+    },
+    {
+      "id": "55",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/280.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/281.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/475.webp"
+    },
+    {
+      "id": "56",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/355.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/356.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/477.webp"
+    },
+    {
+      "id": "57",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/81.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/82.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/462.webp"
+    },
+    {
+      "id": "58",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/111.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/112.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/464.webp"
+    },
+    {
+      "id": "59",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/239.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/125.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/466.webp"
+    },
+    {
+      "id": "60",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/240.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/126.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/467.webp"
+    },
+    {
+      "id": "61",
+      "stage1": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/175.webp",
+      "stage2": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/176.webp",
+      "stage3": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/468.webp"
     }
   ]
 }

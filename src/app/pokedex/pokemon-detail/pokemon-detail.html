@@ -1,0 +1,141 @@
+<div class="detail-wrapper">
+  <div class="fond-incliné" [style.background-color]="getTypeColor()"></div>
+  <main class="detail-container">
+  <!-- Header -->
+  <div class="detail-header">
+    <button class="btn-back" (click)="goBack()">← Retour</button>
+    <h1 class="detail-title">{{ pokemon?.name }}</h1>
+    <div class="header-actions">
+      <button class="btn-edit" (click)="editPokemon()">✏️ Éditer</button>
+      <button class="btn-delete" (click)="deletePokemon()">🗑️ Supprimer</button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  @if (loading) {
+    <div class="loading-container">
+      <p>Chargement des détails...</p>
+    </div>
+  }
+
+  <!-- Error State -->
+  @if (error && !loading) {
+    <div class="error-container">
+      <p>{{ error }}</p>
+      <a (click)="goBack()" class="btn-back-error">Retour à la liste</a>
+    </div>
+  }
+
+  <!-- Main Content -->
+  @if (pokemon && !loading && !error) {
+    <div class="detail-content">
+      <!-- Large Image Section with Blur Background -->
+      <div class="pokemon-image-section">
+        <div class="image-blur-bg" [style.background-image]="'url(' + pokemon.imageUrl + ')'"></div>
+        <div class="pokemon-image-display">
+          <img [src]="pokemon.imageUrl" [alt]="pokemon.name" class="pokemon-image-large">
+        </div>
+      </div>
+
+      <!-- Pokemon Info Section -->
+      <div class="pokemon-info-section">
+        <h2 class="pokemon-name">{{ pokemon.name }}</h2>
+
+        <div class="pokemon-type-badge" [style.background-color]="getTypeColor()">
+          <img [src]="getTypeIcon()" [alt]="pokemonType?.name" class="type-icon">
+          <span>{{ pokemonType?.name || 'Inconnu' }}</span>
+        </div>
+
+        <div class="pokemon-meta">
+          <div class="meta-item">
+            <span class="meta-label">Niveau</span>
+            <span class="meta-value">{{ pokemon.level }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Stade Evolution</span>
+            <span class="meta-value">{{ pokemon.evolutionLineId }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Clics</span>
+            <span class="meta-value">{{ pokemon.currentClicks }}</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Favori</span>
+            <span class="meta-value">{{ pokemon.isFavorite ? '⭐' : '☆' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="detail-stats">
+        <h3>Statistiques</h3>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header" [style.background-color]="getTypeColor()">
+              <span class="stat-icon">❤️</span>
+            </div>
+            <div class="stat-content">
+              <span class="stat-label">Points de Vie</span>
+              <span class="stat-value">{{ pokemon.hp }}</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header" [style.background-color]="getTypeColor()">
+              <span class="stat-icon">⚔️</span>
+            </div>
+            <div class="stat-content">
+              <span class="stat-label">Attaque</span>
+              <span class="stat-value">{{ pokemon.attack }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evolution Section -->
+      @if (evolutionLine) {
+        <div class="detail-evolution">
+          <h3>Stades d'Évolution</h3>
+          <div class="evolution-stages">
+            @if (evolutionLine.stage1) {
+              <div class="evolution-stage">
+                <img [src]="evolutionLine.stage1" [alt]="'Stade 1'" class="evolution-img">
+                <span class="stage-label">Stade 1</span>
+                <span class="stage-level">Lvl 1</span>
+              </div>
+              <span class="evolution-separator">→</span>
+            }
+            @if (evolutionLine.stage2) {
+              <div class="evolution-stage">
+                <img [src]="evolutionLine.stage2" [alt]="'Stade 2'" class="evolution-img">
+                <span class="stage-label">Stade 2</span>
+                <span class="stage-level">Lvl 16</span>
+              </div>
+              <span class="evolution-separator">→</span>
+            }
+            @if (evolutionLine.stage3) {
+              <div class="evolution-stage">
+                <img [src]="evolutionLine.stage3" [alt]="'Stade 3'" class="evolution-img">
+                <span class="stage-label">Stade 3</span>
+                <span class="stage-level">Lvl 32</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      <!-- Weaknesses Section -->
+      @if (pokemonType && pokemonType.weaknesses.length) {
+        <div class="detail-weaknesses">
+          <h3>Faiblesses</h3>
+          <div class="weaknesses-list">
+            @for (weakness of pokemonType.weaknesses; track weakness) {
+              <span class="weakness-badge">{{ weakness }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+  </main>
+</div>

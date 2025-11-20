@@ -8,11 +8,16 @@ import { CreatePokemon, Pokemon, PokemonType } from '../models/pokemon.model';
 export class Pokedex {
   private base = 'http://localhost:3000/creatures';
   private typesUrl = 'http://localhost:3000/types';
+  private evolutionLinesUrl = 'http://localhost:3000/evolution_lines';
 
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getTypes(): Observable<PokemonType[]> {
     return this.http.get<PokemonType[]>(this.typesUrl);
+  }
+
+  getEvolutionLines(): Observable<any[]> {
+    return this.http.get<any[]>(this.evolutionLinesUrl);
   }
 
   createPokemon(data: CreatePokemon): Observable<Pokemon> {

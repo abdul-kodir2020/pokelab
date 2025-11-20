@@ -1,57 +1,133 @@
-<section class="container mx-auto max-w-2xl p-6">
-  <h1 class="text-2xl font-bold mb-4">{{ title }}</h1>
-
-  <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-5">
-    <div>
-      <label class="block text-sm font-medium mb-1">Nom</label>
-      <input type="text" formControlName="name" class="w-full rounded border p-2" />
+<section class="form-container">
+  <div class="form-wrapper">
+    <div class="form-header">
+      <h1>{{ title }}</h1>
     </div>
 
-    <div>
-      <label class="block text-sm font-medium mb-1">Type</label>
-      <select formControlName="type1" class="w-full rounded border p-2">
-        <option value="">— Choisir —</option>
-        <option *ngFor="let t of types" [value]="t.name">{{ t.name }}</option>
-      </select>
-    </div>
-
-    <div class="grid grid-cols-2 gap-4">
-      <div>
-        <label class="block text-sm font-medium mb-1">PV (HP)</label>
-        <input type="number" formControlName="hp" class="w-full rounded border p-2" />
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-content">
+      <!-- Preview Section -->
+      <div class="preview-section">
+        <div class="preview-box">
+          @if (form.value.imageUrl) {
+            <img [src]="form.value.imageUrl" alt="Pokémon preview" />
+          } @else {
+            <span class="no-image">Pas d'image</span>
+          }
+        </div>
       </div>
-      <div>
-        <label class="block text-sm font-medium mb-1">Attaque</label>
-        <input type="number" formControlName="attack" class="w-full rounded border p-2" />
+
+      <!-- Name Input -->
+      <div class="form-group">
+        <label>Nom</label>
+        <input 
+          type="text" 
+          formControlName="name" 
+          class="form-input"
+          placeholder="Entrez le nom..." />
+        @if (form.get('name')?.hasError('required') && form.get('name')?.touched) {
+          <span class="error-message">Le nom est requis</span>
+        }
+      </div>
+
+      <!-- Type Selection -->
+      <div class="form-group">
+        <label>Type</label>
+        <select formControlName="typeId" class="form-select">
+          <option value="">— Choisir un type —</option>
+          @for (t of types; track t.id) {
+            <option [value]="t.id">{{ t.name }}</option>
+          }
+        </select>
+        @if (form.get('typeId')?.hasError('required') && form.get('typeId')?.touched) {
+          <span class="error-message">Le type est requis</span>
+        }
+      </div>
+
+      <!-- Evolution Line Selection Button -->
+      <div class="form-group">
+        <label>Image</label>
+        <button 
+          type="button" 
+          class="evolution-select-btn"
+          (click)="openEvolutionModal()">
+          @if (selectedEvolutionId) {
+            <span class="btn-text">Image {{ selectedEvolutionId }}</span>
+            <img [src]="selectedEvolutionImage" 
+                 alt="Selected evolution"
+                 class="selected-evolution-thumb" />
+          } @else {
+            Cliquez pour sélectionner une image
+          }
+        </button>
+        @if (!selectedEvolutionId) {
+          <span class="error-message" style="display: block; margin-top: 0.5rem;">Sélectionnez une ligne d'évolution</span>
+        }
+      </div>
+
+      <!-- Stats Section (Fixed) -->
+      <div class="stats-section">
+        <h3>Statistiques (fixes selon le type)</h3>
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-label">PV</div>
+            <input 
+              type="number" 
+              formControlName="hp" 
+              class="stat-input"
+              readonly />
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Attaque</div>
+            <input 
+              type="number" 
+              formControlName="attack" 
+              class="stat-input"
+              readonly />
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Niveau</div>
+            <input 
+              type="number" 
+              formControlName="level" 
+              class="stat-input"
+              readonly />
+          </div>
+        </div>
+        <p class="stat-info">* Les statistiques sont automatiquement fixées selon le type sélectionné</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="form-actions">
+        <button type="submit" class="btn-submit" [disabled]="form.invalid">
+          {{ submitLabel }}
+        </button>
+        <a routerLink="/pokedex" class="btn-cancel">Annuler</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Evolution Selection Modal -->
+  @if (showEvolutionModal) {
+    <div class="modal-overlay" (click)="closeEvolutionModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h2>Sélectionner une ligne d'évolution</h2>
+          <button type="button" class="close-modal-btn" (click)="closeEvolutionModal()">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="evolution-main-gallery">
+            @for (evolution of evolutionGallery; track evolution.id) {
+              <div 
+                class="evolution-card"
+                [class.selected]="selectedEvolutionId === evolution.id"
+                (click)="selectEvolutionLine(evolution.id)">
+                <img [src]="evolution.stage1" [alt]="'Evolution ' + evolution.id" />
+                <span class="evolution-label">Ligne {{ evolution.id }}</span>
+              </div>
+            }
+          </div>
+        </div>
       </div>
     </div>
-
-    <div>
-      <label class="block text-sm font-medium mb-1">Niveau</label>
-      <input type="number" formControlName="level" class="w-full rounded border p-2" />
-    </div>
-
-    <div>
-      <label class="block text-sm font-medium mb-1">Image (URL)</label>
-      <input type="url" formControlName="imageUrl" class="w-full rounded border p-2" />
-    </div>
-
-    <div>
-      <label class="block text-sm font-medium mb-1">Image shiny (URL)</label>
-      <input type="url" formControlName="shinyImageUrl" class="w-full rounded border p-2" />
-    </div>
-
-    <div class="flex items-center gap-3">
-      <img *ngIf="form.value.imageUrl" [src]="form.value.imageUrl" class="w-16 h-16 object-contain bg-gray-50 rounded" />
-      <span class="text-gray-500 text-sm">Aperçu</span>
-    </div>
-
-    <div class="flex gap-2">
-      <button type="submit" class="px-4 py-2 rounded bg-blue-600 text-white cursor-pointer disabled:opacity-50"
-              [disabled]="form.invalid">
-        {{ submitLabel }}
-      </button>
-      <a routerLink="/pokedex" class="px-4 py-2 rounded border cursor-pointer">Annuler</a>
-    </div>
-  </form>
+  }
 </section>

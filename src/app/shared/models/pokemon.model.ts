@@ -1,26 +1,41 @@
 export interface Pokemon {
-    id: number;
-    userId: number;
-    name: string;
-    type1: string;
-    hp: number;
-    attack: number;
-    imageUrl: string;
-    shinyImageUrl: string;
-    isFavorite: boolean;
-    level: number;
-    currentClicks: number;
+  id: string;
+  userId: string;
+  name: string;
+  typeId: string;
+  evolutionLineId: string;
+  hp: number;
+  attack: number;
+  imageUrl: string;
+  isFavorite: boolean;
+  level: number;
+  currentClicks: number;
 }
 
-export type CreatePokemon = Omit<Pokemon, 'id' | 'userId' | 'isFavorite' | 'currentClicks'>;
+export interface CreatePokemon {
+  name: string;
+  typeId: string;
+  evolutionLineId: string;
+  hp: number;
+  attack: number;
+  level: number;
+  imageUrl: string;
+}
 
 export interface PokemonType {
-    id: string;
-    name: string;
-    color: string;
-    baseHp: number;
-    baseAttack: number;
-    growthHp: number;
-    growthAttack: number;
-    weaknesses: string[];
+  id: string;
+  name: string;
+  color: string;
+  baseHp: number;
+  baseAttack: number;
+  growthHp: number;
+  growthAttack: number;
+  weaknesses: string[];
+}
+
+export interface EvolutionImage {
+  id: string;
+  stage1: string;
+  stage2: string;
+  stage3: string;
 }

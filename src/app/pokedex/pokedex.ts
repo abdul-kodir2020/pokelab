@@ -1,46 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Pokedex } from '../shared/services/pokedex';
-import { Pokemon } from '../shared/models/pokemon.model';
-import { RouterModule } from '@angular/router';
+import { Pokemon, PokemonType } from '../shared/models/pokemon.model';
+import { Router, RouterModule } from '@angular/router';
 import { Logo } from '../components/logo/logo';
-import { PokemonList } from '../components/pokemon-list/pokemon-list';
+import { PokedexListComponent } from '../components/pokedex-list/pokedex-list';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-pokedex',
   standalone: true,
-  imports: [CommonModule, RouterModule, Logo, PokemonList],
+  imports: [CommonModule, RouterModule, Logo, PokedexListComponent],
   templateUrl: './pokedex.html',
   styleUrls: ['./pokedex.css'],
 })
 export class PokedexComponent implements OnInit {
-  pokemons$!: Observable<Pokemon[]>;
+  private pokedex = inject(Pokedex);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-  constructor(private pokedex: Pokedex) {}
+  pokemons$!: Observable<Pokemon[]>;
+  types: PokemonType[] = [];
+  isLoggedIn = this.authService.isLoggedIn;
 
   ngOnInit(): void {
+    this.loadTypes();
     this.load();
   }
 
-  load() { this.pokemons$ = this.pokedex.getUserPokemons(); }
-
-  trackById = (_: number, p: Pokemon) => p.id;
-
-  onDelete(p: Pokemon, ev?: Event) {
-    ev?.preventDefault();
-    ev?.stopPropagation();
-    if (!confirm(`Supprimer "${p.name}" ?`)) return;
-
-    this.pokedex.remove(p.id).subscribe({
-      next: () => {
-        this.load();
-        // toast/alert si tu veux
-      },
-      error: (e) => {
-        console.error(e);
-        alert('Suppression impossible (voir console).');
-      },
+  loadTypes() {
+    this.pokedex.getTypes().subscribe(types => {
+      this.types = types;
     });
+  }
+
+  load() {
+    this.pokemons$ = this.pokedex.getUserPokemons();
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }
