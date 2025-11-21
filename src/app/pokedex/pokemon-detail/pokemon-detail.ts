@@ -23,6 +23,7 @@ export class PokemonDetailComponent implements OnInit {
   evolutionLines: EvolutionImage[] = [];
   loading = true;
   error: string | null = null;
+  levelUpAnimation = false;
 
   ngOnInit() {
     // Load all types and evolution lines
@@ -91,5 +92,84 @@ export class PokemonDetailComponent implements OnInit {
     if (typeName === 'electrik') return 'icon/electric.svg';
     if (typeName === 'psy') return 'icon/psychic.svg';
     return `icon/${typeName}.svg`;
+  }
+
+  toggleFavorite() {
+    if (!this.pokemon) return;
+    this.pokemon.isFavorite = !this.pokemon.isFavorite;
+    this.pokedex.update(this.pokemon.id, { isFavorite: this.pokemon.isFavorite }).subscribe({
+      error: (err) => {
+        console.error('Erreur lors de la mise à jour du favori', err);
+        this.pokemon!.isFavorite = !this.pokemon!.isFavorite; // Revert
+      },
+    });
+  }
+
+  trainPokemon() {
+    if (!this.pokemon) return;
+    this.pokemon.currentClicks++;
+    
+    // Check if next level reached
+    const clicksNeeded = this.getClicksForNextLevel();
+    if (this.pokemon.currentClicks >= clicksNeeded) {
+      this.pokemon.currentClicks = 0;
+      this.pokemon.level++;
+      
+      // Trigger level up animation
+      this.levelUpAnimation = true;
+      setTimeout(() => {
+        this.levelUpAnimation = false;
+      }, 600);
+
+      // Update HP and Attack based on level up
+      if (this.pokemonType) {
+        this.pokemon.hp = this.pokemonType.baseHp + (this.pokemon.level - 1) * this.pokemonType.growthHp;
+        this.pokemon.attack = this.pokemonType.baseAttack + (this.pokemon.level - 1) * this.pokemonType.growthAttack;
+      }
+
+      // Check for evolution
+      this.checkEvolution();
+    }
+
+    this.pokedex.update(this.pokemon.id, {
+      currentClicks: this.pokemon.currentClicks,
+      level: this.pokemon.level,
+      hp: this.pokemon.hp,
+      attack: this.pokemon.attack,
+      imageUrl: this.pokemon.imageUrl,
+    }).subscribe({
+      error: (err) => {
+        console.error('Erreur lors de l\'entraînement', err);
+      },
+    });
+  }
+
+  private checkEvolution() {
+    if (!this.pokemon || !this.evolutionLine) return;
+
+    // Evolution logic based on level
+    let newImageUrl = this.pokemon.imageUrl;
+
+    if (this.pokemon.level >= 32 && this.evolutionLine.stage3) {
+      newImageUrl = this.evolutionLine.stage3;
+    } else if (this.pokemon.level >= 16 && this.evolutionLine.stage2) {
+      newImageUrl = this.evolutionLine.stage2;
+    } else if (this.pokemon.level >= 1 && this.evolutionLine.stage1) {
+      newImageUrl = this.evolutionLine.stage1;
+    }
+
+    this.pokemon.imageUrl = newImageUrl;
+  }
+
+  getClicksForNextLevel(): number {
+    if (!this.pokemon) return 10;
+    // Formula: clicks needed increases with level (e.g., 10, 15, 20, etc.)
+    return 10 + (this.pokemon.level - 1) * 5;
+  }
+
+  getProgressPercentage(): number {
+    if (!this.pokemon) return 0;
+    const clicksNeeded = this.getClicksForNextLevel();
+    return Math.round((this.pokemon.currentClicks / clicksNeeded) * 100);
   }
 }
