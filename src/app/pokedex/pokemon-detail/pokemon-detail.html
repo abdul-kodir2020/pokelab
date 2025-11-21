@@ -44,9 +44,11 @@
     <div class="detail-content">
       <!-- Large Image Section with Blur Background -->
       <div class="pokemon-image-section" [ngClass]="{ 'level-up-animation': levelUpAnimation }">
-        <div class="image-blur-bg" [style.background-image]="'url(' + pokemon.imageUrl + ')'"></div>
-        <div class="pokemon-image-display">
-          <img [src]="pokemon.imageUrl" [alt]="pokemon.name" class="pokemon-image-large">
+        <div class="image-container">
+          <div class="image-blur-bg" [style.background-image]="'url(' + pokemon.imageUrl + ')'"></div>
+          <div class="pokemon-image-display">
+            <img [src]="pokemon.imageUrl" [alt]="pokemon.name" class="pokemon-image-large">
+          </div>
         </div>
       </div>
 
@@ -102,6 +104,12 @@
         <h3>Entraîner mon Pokémon</h3>
         <div class="training-header">
           <span class="current-level">Niveau {{ pokemon.level }}</span>
+          @if (levelUpAnimation) {
+            <div class="level-up-badge">
+              <span class="level-up-badge-arrow">⬆</span>
+              <span class="level-up-badge-text">LEVEL UP!</span>
+            </div>
+          }
         </div>
         <div class="training-content">
           <div class="training-info">
@@ -171,6 +179,27 @@
         </div>
       }
     </div>
+
+    <!-- Evolution Modal -->
+    @if (showEvolutionModal) {
+      <div class="evolution-modal-overlay">
+        <div class="evolution-modal">
+          <h2>Évolution!</h2>
+          <div class="evolution-comparison">
+            <div class="evolution-before">
+              <img [src]="evolutionBeforeImage" [alt]="'Avant'" class="evolution-modal-img">
+              <span>Avant</span>
+            </div>
+            <div class="evolution-arrow">→</div>
+            <div class="evolution-after">
+              <img [src]="pokemon.imageUrl" [alt]="'Après'" class="evolution-modal-img">
+              <span>Après</span>
+            </div>
+          </div>
+          <button class="evolution-close-btn" (click)="closeEvolutionModal()">Continuer</button>
+        </div>
+      </div>
+    }
   }
   </main>
 </div>

@@ -24,6 +24,8 @@ export class PokemonDetailComponent implements OnInit {
   loading = true;
   error: string | null = null;
   levelUpAnimation = false;
+  showEvolutionModal = false;
+  evolutionBeforeImage = '';
 
   ngOnInit() {
     // Load all types and evolution lines
@@ -149,22 +151,42 @@ export class PokemonDetailComponent implements OnInit {
 
     // Evolution logic based on level
     let newImageUrl = this.pokemon.imageUrl;
+    let hasEvolved = false;
 
     if (this.pokemon.level >= 32 && this.evolutionLine.stage3) {
-      newImageUrl = this.evolutionLine.stage3;
+      if (this.pokemon.imageUrl !== this.evolutionLine.stage3) {
+        this.evolutionBeforeImage = this.pokemon.imageUrl;
+        newImageUrl = this.evolutionLine.stage3;
+        hasEvolved = true;
+      }
     } else if (this.pokemon.level >= 16 && this.evolutionLine.stage2) {
-      newImageUrl = this.evolutionLine.stage2;
+      if (this.pokemon.imageUrl !== this.evolutionLine.stage2) {
+        this.evolutionBeforeImage = this.pokemon.imageUrl;
+        newImageUrl = this.evolutionLine.stage2;
+        hasEvolved = true;
+      }
     } else if (this.pokemon.level >= 1 && this.evolutionLine.stage1) {
-      newImageUrl = this.evolutionLine.stage1;
+      if (this.pokemon.imageUrl !== this.evolutionLine.stage1) {
+        this.evolutionBeforeImage = this.pokemon.imageUrl;
+        newImageUrl = this.evolutionLine.stage1;
+        hasEvolved = true;
+      }
     }
 
-    this.pokemon.imageUrl = newImageUrl;
+    if (hasEvolved) {
+      this.pokemon.imageUrl = newImageUrl;
+      this.showEvolutionModal = true;
+    }
+  }
+
+  closeEvolutionModal() {
+    this.showEvolutionModal = false;
   }
 
   getClicksForNextLevel(): number {
     if (!this.pokemon) return 10;
-    // Formula: clicks needed increases with level (e.g., 10, 15, 20, etc.)
-    return 10 + (this.pokemon.level - 1) * 5;
+    // Formula: 10 + (level - 1) * 1 = 10, 11, 12, 13, ...
+    return 10 + (this.pokemon.level - 1);
   }
 
   getProgressPercentage(): number {
