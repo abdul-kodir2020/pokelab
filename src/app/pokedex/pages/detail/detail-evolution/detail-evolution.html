@@ -1,0 +1,49 @@
+<div class="detail-evolution">
+  <h3>Stades d'Évolution</h3>
+  <div class="evolution-stages">
+    @if (evolutionLine?.stage1) {
+      <div class="evolution-stage">
+        <img [src]="evolutionLine?.stage1" [alt]="'Stade 1'" class="evolution-img">
+        <span class="stage-label">Stade 1</span>
+        <span class="stage-level">Lvl 1</span>
+      </div>
+      <span class="evolution-separator">→</span>
+    }
+    @if (evolutionLine?.stage2) {
+      <div class="evolution-stage">
+        <img [src]="evolutionLine?.stage2" [alt]="'Stade 2'" class="evolution-img">
+        <span class="stage-label">Stade 2</span>
+        <span class="stage-level">Lvl 16</span>
+      </div>
+      <span class="evolution-separator">→</span>
+    }
+    @if (evolutionLine?.stage3) {
+      <div class="evolution-stage">
+        <img [src]="evolutionLine?.stage3" [alt]="'Stade 3'" class="evolution-img">
+        <span class="stage-label">Stade 3</span>
+        <span class="stage-level">Lvl 32</span>
+      </div>
+    }
+  </div>
+</div>
+
+<!-- Evolution Modal -->
+@if (showEvolutionModal) {
+  <div class="evolution-modal-overlay">
+    <div class="evolution-modal">
+      <h2>Évolution!</h2>
+      <div class="evolution-comparison">
+        <div class="evolution-before">
+          <img [src]="evolutionBeforeImage" [alt]="'Avant'" class="evolution-modal-img">
+          <span>Avant</span>
+        </div>
+        <div class="evolution-arrow">→</div>
+        <div class="evolution-after">
+          <img [src]="pokemon?.imageUrl" [alt]="'Après'" class="evolution-modal-img">
+          <span>Après</span>
+        </div>
+      </div>
+      <button class="evolution-close-btn" (click)="onCloseEvolutionModal()">Continuer</button>
+    </div>
+  </div>
+}

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Pokedex } from '../../../shared/services/pokedex';
 import { Pokemon, PokemonType, EvolutionImage } from '../../../shared/models/pokemon.model';
+import { DetailEvolutionComponent } from './detail-evolution/detail-evolution';
 
 @Component({
   selector: 'app-pokemon-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, DetailEvolutionComponent],
   templateUrl: './detail.html',
   styleUrls: ['./detail.css'],
 })

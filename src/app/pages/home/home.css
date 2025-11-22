@@ -182,6 +182,63 @@
     transition: 0.5s;
 }
 
+/* Home Header Top */
+.home-header-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    z-index: 20;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.user-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid white;
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    color: white;
+}
+
+.profile-label {
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.profile-username {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    text-transform: capitalize;
+}
+
 /* Logo top centered on home */
 .home-top-logo {
     position: absolute;
@@ -227,12 +284,7 @@
     transform: scale(1.05);
 }
 
-.btns-section{
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+.btns-section {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
 }

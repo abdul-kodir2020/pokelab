@@ -2,13 +2,27 @@
     <header class="">
         <div class="account-btn">
             @if (isLoggedIn()) {
+                @let user = currentUser$ | async;
+                @if (user) {
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <img [src]="'https://ui-avatars.com/api/?name=' + (user.username || 'User') + '&background=c81516&color=fff&bold=true'" [alt]="user.username" class="avatar-img">
+                        </div>
+                        <span class="username">{{ user.username }}</span>
+                    </div>
+                }
                 <button type="button" class="header-btn" (click)="logout()">Se Déconnecter</button>
             }
         </div>
         <app-logo></app-logo>
     </header>
     <div class="sticky-bar">
-        <app-search-bar [types]="types" [onFilterChange]="onFilterChange.bind(this)"></app-search-bar>
+        <div class="sticky-bar-content">
+            <app-search-bar [types]="types" [onFilterChange]="onFilterChange.bind(this)"></app-search-bar>
+            <button class="btn-favorites" [class.active]="showFavoritesOnly" (click)="toggleFavoritesView()" title="Afficher les favoris">
+                {{ showFavoritesOnly ? '⭐ Favoris' : '☆ Favoris' }}
+            </button>
+        </div>
     </div>
     <!-- <div class="container p-4 mx-auto">
         
@@ -16,9 +30,16 @@
     <div class="pokedex-container-list">
         @if (showEmptyMessage) {
             <div class="empty-filter-container">
-                <h2>Aucun Pokémon ne correspond à vos filtres</h2>
-                <p>Ajustez vos critères de recherche</p>
-                <button class="btn-reset-filters" (click)="resetFilters()">Réinitialiser les filtres</button>
+                @if (showFavoritesOnly) {
+                    <h2>Aucun Pokémon en favori</h2>
+                    <p>Marquez vos Pokémons préférés comme favoris</p>
+                } @else {
+                    <h2>Aucun Pokémon ne correspond à vos filtres</h2>
+                    <p>Ajustez vos critères de recherche</p>
+                }
+                <button class="btn-reset-filters" (click)="showFavoritesOnly ? toggleFavoritesView() : resetFilters()">
+                    {{ showFavoritesOnly ? 'Voir tous les Pokémons' : 'Réinitialiser les filtres' }}
+                </button>
             </div>
         } @else {
             <app-pokedex-list [pokemons$]="displayedPokemons$" [types]="types"></app-pokedex-list>

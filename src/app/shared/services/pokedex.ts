@@ -21,14 +21,12 @@ export class Pokedex {
   }
 
   createPokemon(data: CreatePokemon): Observable<Pokemon> {
-    const rawUserId = this.auth.getLoggedInUser()?.id;
-    if (!rawUserId) throw new Error('Utilisateur non connecté');
-
-    const userId = typeof rawUserId === 'string' ? parseInt(rawUserId, 10) : rawUserId;
+    const userId = this.auth.getLoggedInUser()?.id;
+    if (!userId) throw new Error('Utilisateur non connecté');
 
     const body = {
       ...data,
-      userId,
+      userId: String(userId),
       isFavorite: false,
       currentClicks: 0,
     };
@@ -37,9 +35,8 @@ export class Pokedex {
   }
 
   getUserPokemons(): Observable<Pokemon[]> {
-    const rawUserId = this.auth.getLoggedInUser()?.id;
-    if (!rawUserId) throw new Error('Utilisateur non connecté');
-    const userId = typeof rawUserId === 'string' ? parseInt(rawUserId, 10) : rawUserId;
+    const userId = this.auth.getLoggedInUser()?.id;
+    if (!userId) throw new Error('Utilisateur non connecté');
     return this.http.get<Pokemon[]>(`${this.base}?userId=${userId}`);
   }
 

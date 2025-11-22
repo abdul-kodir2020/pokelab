@@ -25,6 +25,11 @@
     transition: all 0.3s ease;
 }
 
+.input-search::-webkit-input-placeholder {
+    color: #aaa;
+    font-size: 1rem;
+}
+
 .input-search:focus {
     outline: none;
     box-shadow: rgb(0, 0, 0) 2px 2px 0px, 0 0 0 3px rgba(200, 21, 22, 0.2);

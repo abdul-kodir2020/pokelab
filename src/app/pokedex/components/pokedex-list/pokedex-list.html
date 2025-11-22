@@ -7,9 +7,14 @@
                     <div class="pokemon-inner">
                         <div class="pokemon-item-header">
                             <span class="pokemon-item-id">lv{{ pokemon.level }}</span>
-                            <div class="pokemon-item-type" [ngStyle]="{ 'background-color': getTypeColor(pokemon.typeId) }">
-                                <img [src]="getTypeIcon(pokemon.typeId)" [alt]="getTypeById(pokemon.typeId)?.name || 'Type'" class="type-icon">
-                                <span class="type-name">{{ getTypeById(pokemon.typeId)?.name || 'Inconnu' }}</span>
+                            <div class="pokemon-item-type-wrapper">
+                                @if (pokemon.isFavorite) {
+                                    <div class="favorite-badge">⭐</div>
+                                }
+                                <div class="pokemon-item-type" [ngStyle]="{ 'background-color': getTypeColor(pokemon.typeId) }">
+                                    <img [src]="getTypeIcon(pokemon.typeId)" [alt]="getTypeById(pokemon.typeId)?.name || 'Type'" class="type-icon">
+                                    <span class="type-name">{{ getTypeById(pokemon.typeId)?.name || 'Inconnu' }}</span>
+                                </div>
                             </div>
                         </div>
                         <div class="pokemon-item-image">
@@ -24,10 +29,8 @@
         }
     } @else {
         <div class="empty-pokedex">
-            <p>Aucune créature pour le moment.</p>
-            <a routerLink="/pokedex/creer" class="btn-create-pokemon">
-                + Créer votre première créature
-            </a>
+            <h2>Vous n'avez aucun pokemon pour l'instant.</h2>
+            <p>Cliquez sur le bouton en bas à droite pour en créer un !</p>
         </div>
     }
 } @else {

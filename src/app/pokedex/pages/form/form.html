@@ -27,12 +27,15 @@
         @if (form.get('name')?.hasError('required') && form.get('name')?.touched) {
           <span class="error-message">Le nom est requis</span>
         }
+        @if (form.get('name')?.hasError('duplicate') && form.get('name')?.touched) {
+          <span class="error-message">Ce nom existe déjà</span>
+        }
       </div>
 
       <!-- Type Selection -->
       <div class="form-group">
         <label>Type</label>
-        <select formControlName="typeId" class="form-select">
+        <select formControlName="typeId" class="form-select" [disabled]="mode === 'edit'">
           <option value="">— Choisir un type —</option>
           @for (t of types; track t.id) {
             <option [value]="t.id">{{ t.name }}</option>
@@ -49,7 +52,8 @@
         <button 
           type="button" 
           class="evolution-select-btn"
-          (click)="openEvolutionModal()">
+          (click)="openEvolutionModal()"
+          [disabled]="mode === 'edit'">
           @if (selectedEvolutionId) {
             <span class="btn-text">Image {{ selectedEvolutionId }}</span>
             <img [src]="selectedEvolutionImage" 

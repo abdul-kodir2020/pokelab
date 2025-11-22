@@ -1,9 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Pokedex } from '../../../shared/services/pokedex';
 import { Pokemon, PokemonType, EvolutionImage } from '../../../shared/models/pokemon.model';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pokemon-form',
@@ -72,7 +74,19 @@ export class PokemonFormComponent implements OnInit {
           level: p.level,
           imageUrl: p.imageUrl,
         });
+        // In edit mode keep only the name editable
+        this.form.get('typeId')?.disable({ emitEvent: false });
+        this.form.get('evolutionLineId')?.disable({ emitEvent: false });
+        this.form.get('hp')?.disable({ emitEvent: false });
+        this.form.get('attack')?.disable({ emitEvent: false });
+        this.form.get('level')?.disable({ emitEvent: false });
+        this.form.get('imageUrl')?.disable({ emitEvent: false });
+        // In edit mode: add async validator to ensure name is unique (excluding current pokemon)
+        this.form.get('name')?.setAsyncValidators(this.nameUniqueValidatorEdit.bind(this));
       });
+    } else {
+      // Create mode: add async validator to ensure unique names
+      this.form.get('name')?.setAsyncValidators(this.nameUniqueValidator.bind(this));
     }
 
     // Type change - auto-fill HP and Attack (create mode only), and update level to 1
@@ -128,6 +142,31 @@ export class PokemonFormComponent implements OnInit {
     this.closeEvolutionModal();
   }
 
+  nameUniqueValidator(control: AbstractControl): Observable<ValidationErrors | null> {
+    const name = (control.value || '').toString().trim().toLowerCase();
+    if (!name) return of(null);
+    return this.pokedex.getUserPokemons().pipe(
+      map(list => {
+        const exists = list.some(p => (p.name || '').toString().trim().toLowerCase() === name);
+        return exists ? { duplicate: true } : null;
+      })
+    );
+  }
+
+  nameUniqueValidatorEdit(control: AbstractControl): Observable<ValidationErrors | null> {
+    const name = (control.value || '').toString().trim().toLowerCase();
+    if (!name) return of(null);
+    return this.pokedex.getUserPokemons().pipe(
+      map(list => {
+        // Allow the current pokemon's name; reject any other duplicate (case-insensitive)
+        const exists = list.some(p => 
+          (p.name || '').toString().trim().toLowerCase() === name && p.id !== this.editingId
+        );
+        return exists ? { duplicate: true } : null;
+      })
+    );
+  }
+
   submit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
@@ -149,15 +188,13 @@ export class PokemonFormComponent implements OnInit {
         next: () => this.router.navigate(['/pokedex']),
       });
     } else {
-      this.pokedex.update(this.editingId!, {
+      // Only update the name — merge with original to preserve other fields
+      const payload: Pokemon = {
+        ...this.original,
         name: v.name!,
-        typeId: v.typeId!,
-        evolutionLineId: v.evolutionLineId!,
-        hp: Number(v.hp),
-        attack: Number(v.attack),
-        level: Number(v.level),
-        imageUrl: v.imageUrl!,
-      }).subscribe({
+      };
+
+      this.pokedex.update(this.editingId!, payload).subscribe({
         next: () => this.router.navigate(['/pokedex']),
       });
     }

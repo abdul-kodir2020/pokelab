@@ -1,7 +1,28 @@
 <div class="home-container container_page_1">
-  <div class="btns-section">
-    <a routerLink="/pokedex" class="header-btn">Mon Pokedex</a>
-    <a routerLink="/login" class="header-btn">Mon Compte</a>
+  <div class="home-header-top">
+    <div class="btns-section">
+      @if (isLoggedIn()) {
+        <a routerLink="/pokedex" class="header-btn">Mon Pokedex</a>
+        <button type="button" class="header-btn" (click)="logout()">Se Déconnecter</button>
+      } @else {
+        <a routerLink="/login" class="header-btn">Connexion</a>
+        <a routerLink="/register" class="header-btn">Inscription</a>
+      }
+    </div>
+    @if (isLoggedIn()) {
+      @let user = currentUser$ | async;
+      @if (user) {
+        <div class="user-profile-header">
+          <div class="profile-avatar">
+            <img [src]="'https://ui-avatars.com/api/?name=' + (user.username || 'User') + '&background=c81516&color=fff&bold=true'" [alt]="user.username" class="avatar-img">
+          </div>
+          <div class="profile-info">
+            <p class="profile-label">Bienvenue</p>
+            <p class="profile-username">{{ user.username }}</p>
+          </div>
+        </div>
+      }
+    }
   </div>
   <div class="home-top-logo">
     <app-logo></app-logo>

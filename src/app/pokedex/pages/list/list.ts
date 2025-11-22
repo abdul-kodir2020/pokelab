@@ -8,6 +8,7 @@ import { Logo } from '../../../shared/components/logo/logo';
 import { PokedexListComponent } from '../../components/pokedex-list/pokedex-list';
 import { SearchBarComponent } from '../../components/search-bar/search-bar';
 import { AuthService } from '../../../auth/auth.service';
+import { User } from '../../../shared/models/user.model';
 
 @Component({
   selector: 'app-pokedex',
@@ -26,16 +27,17 @@ export class PokemonListComponent implements OnInit {
   allPokemons: Pokemon[] = [];
   types: PokemonType[] = [];
   isLoggedIn = this.authService.isLoggedIn;
+  currentUser$!: Observable<User | null>;
   activeFilters = {
     type: '',
     minLevel: 1
   };
   hasActiveFilter = false;
-  filteredPokemons: Pokemon[] = [];
-  showFilteredList = false;
   showEmptyMessage = false;
+  showFavoritesOnly = false;
 
   ngOnInit(): void {
+    this.currentUser$ = this.authService.currentUser$;
     this.loadTypes();
     this.load();
   }
@@ -59,28 +61,7 @@ export class PokemonListComponent implements OnInit {
     this.activeFilters = filters;
     this.hasActiveFilter = filters.type !== '' || filters.minLevel > 1;
     
-    if (this.hasActiveFilter) {
-      // Apply filters
-      this.filteredPokemons = this.allPokemons.filter(pokemon => {
-        const typeMatch = filters.type === '' || pokemon.typeId === filters.type;
-        const levelMatch = pokemon.level >= filters.minLevel;
-        return typeMatch && levelMatch;
-      });
-      
-      if (this.filteredPokemons.length === 0) {
-        this.showEmptyMessage = true;
-        this.showFilteredList = false;
-      } else {
-        this.displayedPokemons$ = of(this.filteredPokemons);
-        this.showFilteredList = true;
-        this.showEmptyMessage = false;
-      }
-    } else {
-      // Reset to show all
-      this.displayedPokemons$ = this.pokemons$;
-      this.showFilteredList = false;
-      this.showEmptyMessage = false;
-    }
+    this.applyFiltersAndFavorites();
   }
 
   resetFilters() {
@@ -89,9 +70,40 @@ export class PokemonListComponent implements OnInit {
       minLevel: 1
     };
     this.hasActiveFilter = false;
-    this.showFilteredList = false;
-    this.showEmptyMessage = false;
-    this.displayedPokemons$ = this.pokemons$;
+    
+    this.applyFiltersAndFavorites();
+  }
+
+  toggleFavoritesView() {
+    this.showFavoritesOnly = !this.showFavoritesOnly;
+    this.applyFiltersAndFavorites();
+  }
+
+  private applyFiltersAndFavorites() {
+    let baseList = this.allPokemons;
+
+    // Step 1: Apply favorites filter if active
+    if (this.showFavoritesOnly) {
+      baseList = baseList.filter(p => p.isFavorite);
+    }
+
+    // Step 2: Apply type and level filters
+    if (this.hasActiveFilter) {
+      baseList = baseList.filter(pokemon => {
+        const typeMatch = this.activeFilters.type === '' || pokemon.typeId === this.activeFilters.type;
+        const levelMatch = pokemon.level >= this.activeFilters.minLevel;
+        return typeMatch && levelMatch;
+      });
+    }
+
+    // Step 3: Update display
+    if (baseList.length === 0) {
+      this.showEmptyMessage = true;
+      this.displayedPokemons$ = of([]);
+    } else {
+      this.showEmptyMessage = false;
+      this.displayedPokemons$ = of(baseList);
+    }
   }
 
   logout() {
