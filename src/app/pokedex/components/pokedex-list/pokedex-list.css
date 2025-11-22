@@ -9,31 +9,6 @@
     transition: all 0.3s cubic-bezier(0.39, 1.71, 0.77, 1.62);
 }
 
-.pokemon-item-type-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.favorite-badge {
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: badgePopIn 0.3s ease-out;
-}
-
-@keyframes badgePopIn {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
 .pokemon-link {
     text-decoration: none;
     color: inherit;

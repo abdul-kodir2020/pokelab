@@ -4,11 +4,12 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Pokedex } from '../../../shared/services/pokedex';
 import { Pokemon, PokemonType, EvolutionImage } from '../../../shared/models/pokemon.model';
 import { DetailEvolutionComponent } from './detail-evolution/detail-evolution';
+import { PokemonNamePipe } from '../../../shared/pipes/pokemon-name.pipe';
 
 @Component({
   selector: 'app-pokemon-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule, DetailEvolutionComponent],
+  imports: [CommonModule, RouterModule, DetailEvolutionComponent, PokemonNamePipe],
   templateUrl: './detail.html',
   styleUrls: ['./detail.css'],
 })

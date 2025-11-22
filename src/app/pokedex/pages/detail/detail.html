@@ -5,7 +5,7 @@
   <div class="detail-header">
     <div class="header-left">
       <button class="btn-back" (click)="goBack()">←</button>
-      <h1 class="detail-title">{{ pokemon?.name }}</h1>
+      <h1 class="detail-title">{{ pokemon?.name | pokemonName }}</h1>
     </div>
     <div class="header-actions-group">
         <div class="header-level">

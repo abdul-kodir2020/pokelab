@@ -4,11 +4,13 @@ import { Observable } from 'rxjs';
 import { Pokemon, PokemonType } from '../../../shared/models/pokemon.model';
 import { RouterModule } from '@angular/router';
 import { Pokedex } from '../../../shared/services/pokedex';
+import { PokemonNamePipe } from '../../../shared/pipes/pokemon-name.pipe';
+import { FavoriteDirective } from '../../../shared/directives/favorite.directive';
 
 @Component({
   selector: 'app-pokedex-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, PokemonNamePipe, FavoriteDirective],
   templateUrl: './pokedex-list.html',
   styleUrls: ['./pokedex-list.css'],
 })
