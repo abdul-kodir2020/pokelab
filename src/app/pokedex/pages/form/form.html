@@ -115,7 +115,7 @@
     <div class="modal-overlay" (click)="closeEvolutionModal()">
       <div class="modal-content" (click)="$event.stopPropagation()">
         <div class="modal-header">
-          <h2>Sélectionner une ligne d'évolution</h2>
+          <h2>Sélectionner une image</h2>
           <button type="button" class="close-modal-btn" (click)="closeEvolutionModal()">✕</button>
         </div>
         <div class="modal-body">
@@ -126,7 +126,7 @@
                 [class.selected]="selectedEvolutionId === evolution.id"
                 (click)="selectEvolutionLine(evolution.id)">
                 <img [src]="evolution.stage1" [alt]="'Evolution ' + evolution.id" />
-                <span class="evolution-label">Ligne {{ evolution.id }}</span>
+                <span class="evolution-label">Image {{ evolution.id }}</span>
               </div>
             }
           </div>

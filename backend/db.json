@@ -227,7 +227,7 @@
       "level": 16,
       "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/404.webp",
       "userId": "d673",
-      "isFavorite": false,
+      "isFavorite": true,
       "currentClicks": 0
     },
     {
@@ -239,6 +239,19 @@
       "attack": 60,
       "level": 1,
       "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/532.webp",
+      "userId": "d673",
+      "isFavorite": false,
+      "currentClicks": 0
+    },
+    {
+      "id": "c2a8",
+      "name": "fantoma",
+      "typeId": "5",
+      "evolutionLineId": "36",
+      "hp": 30,
+      "attack": 70,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/280.webp",
       "userId": "d673",
       "isFavorite": false,
       "currentClicks": 0
