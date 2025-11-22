@@ -137,7 +137,7 @@
       "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/153.webp",
       "userId": 1,
       "isFavorite": false,
-      "currentClicks": 0
+      "currentClicks": 7
     },
     {
       "id": "2d5e",
@@ -162,7 +162,7 @@
       "level": 16,
       "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/11.webp",
       "userId": 1,
-      "isFavorite": false,
+      "isFavorite": true,
       "currentClicks": 0
     },
     {
@@ -190,6 +190,45 @@
       "userId": 1,
       "isFavorite": false,
       "currentClicks": 0
+    },
+    {
+      "id": "22f4",
+      "name": "zhuo fan",
+      "typeId": "5",
+      "evolutionLineId": "8",
+      "hp": 30,
+      "attack": 70,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/41.webp",
+      "userId": null,
+      "isFavorite": true,
+      "currentClicks": 3
+    },
+    {
+      "id": "ce6c",
+      "name": "test",
+      "typeId": "2",
+      "evolutionLineId": "2",
+      "hp": 70,
+      "attack": 30,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/4.webp",
+      "userId": null,
+      "isFavorite": false,
+      "currentClicks": 0
+    },
+    {
+      "id": "e6e7",
+      "name": "test",
+      "typeId": "3",
+      "evolutionLineId": "17",
+      "hp": 60,
+      "attack": 40,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/92.webp",
+      "userId": null,
+      "isFavorite": true,
+      "currentClicks": 1
     }
   ],
   "evolution_lines": [

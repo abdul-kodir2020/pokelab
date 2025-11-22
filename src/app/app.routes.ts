@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login';
 import { RegisterComponent } from './auth/register/register';
 import { authGuard } from './shared/guards/auth.guard';
-import { Home } from './home/home';
-import { PokedexComponent } from './pokedex/pokedex';
-import { PokemonFormComponent } from './pokedex-form/pokedex-form';
-import { PokedexLayout } from './pokedex-layout/pokedex-layout';
-import { PokemonDetailComponent } from './pokedex/pokemon-detail/pokemon-detail';
+import { Home } from './pages/home/home';
+import { PokemonListComponent } from './pokedex/pages/list/list';
+import { PokemonFormComponent } from './pokedex/pages/form/form';
+import { PokedexLayout } from './pokedex/components/pokedex-layout/pokedex-layout';
+import { PokemonDetailComponent } from './pokedex/pages/detail/detail';
 
 
 export const routes: Routes = [
@@ -16,8 +16,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  // Routes protégées par le AuthGuard
-  // Décommentez-les lorsque vos composants seront créés
+  // Routes protégées
   
   {
     path: 'pokedex', 
@@ -26,7 +25,7 @@ export const routes: Routes = [
     children: [
       {
         path: '', 
-        component: PokedexComponent
+        component: PokemonListComponent
       },
       {
         path: 'creer', 

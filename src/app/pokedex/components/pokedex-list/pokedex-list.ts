@@ -1,9 +1,9 @@
 import { Component, Input, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { Pokemon, PokemonType } from '../../shared/models/pokemon.model';
+import { Pokemon, PokemonType } from '../../../shared/models/pokemon.model';
 import { RouterModule } from '@angular/router';
-import { Pokedex } from '../../shared/services/pokedex';
+import { Pokedex } from '../../../shared/services/pokedex';
 
 @Component({
   selector: 'app-pokedex-list',

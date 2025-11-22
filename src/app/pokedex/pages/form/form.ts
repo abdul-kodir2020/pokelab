@@ -2,15 +2,15 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { Pokedex } from '../shared/services/pokedex';
-import { Pokemon, PokemonType, EvolutionImage } from '../shared/models/pokemon.model';
+import { Pokedex } from '../../../shared/services/pokedex';
+import { Pokemon, PokemonType, EvolutionImage } from '../../../shared/models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-form',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
-  templateUrl: './pokedex-form.html',
-  styleUrls: ['./pokedex-form.css'],
+  templateUrl: './form.html',
+  styleUrls: ['./form.css'],
 })
 export class PokemonFormComponent implements OnInit {
   private fb = inject(FormBuilder);

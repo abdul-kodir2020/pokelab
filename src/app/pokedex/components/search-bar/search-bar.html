@@ -1,0 +1,70 @@
+<div class="search-container">
+    <div class="search">
+        <input
+            placeholder="Dracaufeu..."
+            class="input-search"
+            [(ngModel)]="searchQuery"
+            (input)="onSearchInput(searchQuery)"
+            (focus)="searchQuery && searchResults.length > 0 ? (showResults = true) : null"
+        >
+        <div class="icons-search">
+            <div class="filter-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="filter" [class.filter-active]="hasActiveFilter" (click)="toggleFilterMenu()" style="border-radius: 50px; cursor: pointer; background-color: rgb(255, 255, 255);">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15 10.5A3.502 3.502 0 0 0 18.355 8H21a1 1 0 1 0 0-2h-2.645a3.502 3.502 0 0 0-6.71 0H3a1 1 0 0 0 0 2h8.645A3.502 3.502 0 0 0 15 10.5zM3 16a1 1 0 1 0 0 2h2.145a3.502 3.502 0 0 0 6.71 0H21a1 1 0 1 0 0-2h-9.145a3.502 3.502 0 0 0-6.71 0H3z" fill="#000"></path>
+                </svg>
+                @if (hasActiveFilter) {
+                    <span class="filter-badge"></span>
+                }
+
+                <!-- Filter Menu -->
+                @if (showFilterMenu) {
+                    <div class="filter-menu">
+                        <h3>Filtrer par</h3>
+                        
+                        <!-- Type Select -->
+                        <div class="filter-group">
+                            <label for="type-select">Type</label>
+                            <select id="type-select" [(ngModel)]="selectedType" class="filter-select">
+                                <option value="">— Tous les types —</option>
+                                @for (type of types; track type.id) {
+                                    <option [value]="type.id">{{ type.name }}</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Min Level Range -->
+                        <div class="filter-group">
+                            <label for="level-range">Niveau minimum: <span class="level-value">{{ minLevel }}</span></label>
+                            <input id="level-range" type="range" min="1" max="100" [(ngModel)]="minLevel" class="filter-range">
+                        </div>
+
+                        <!-- Filter Buttons -->
+                        <div class="filter-buttons">
+                            <button class="filter-btn reset" (click)="resetFilter()">Réinitialiser</button>
+                            <button class="filter-btn apply" (click)="applyFilter()">Appliquer</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results Dropdown -->
+    @if (showResults && searchResults.length > 0) {
+        <div class="search-results">
+            @for (pokemon of searchResults; track pokemon.id) {
+                <div class="search-result-item" (click)="selectPokemon(pokemon)">
+                    <img [src]="pokemon.imageUrl" [alt]="pokemon.name" class="result-pokemon-img">
+                    <div class="result-info">
+                        <span class="result-name">{{ pokemon.name }}</span>
+                        <div class="result-type" [style.background-color]="getTypeColor(pokemon.typeId)">
+                            <img [src]="getTypeIcon(pokemon.typeId)" [alt]="getTypeById(pokemon.typeId)?.name || 'Type'" class="result-type-icon">
+                            <span>{{ getTypeById(pokemon.typeId)?.name || 'Inconnu' }}</span>
+                        </div>
+                    </div>
+                    <span class="result-level">Lv{{ pokemon.level }}</span>
+                </div>
+            }
+        </div>
+    }
+</div>

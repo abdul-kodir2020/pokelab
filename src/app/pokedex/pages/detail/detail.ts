@@ -1,15 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { Pokedex } from '../../shared/services/pokedex';
-import { Pokemon, PokemonType, EvolutionImage } from '../../shared/models/pokemon.model';
+import { Pokedex } from '../../../shared/services/pokedex';
+import { Pokemon, PokemonType, EvolutionImage } from '../../../shared/models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-detail',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './pokemon-detail.html',
-  styleUrls: ['./pokemon-detail.css'],
+  templateUrl: './detail.html',
+  styleUrls: ['./detail.css'],
 })
 export class PokemonDetailComponent implements OnInit {
   private pokedex = inject(Pokedex);
@@ -28,18 +28,22 @@ export class PokemonDetailComponent implements OnInit {
   evolutionBeforeImage = '';
 
   ngOnInit() {
-    // Load all types and evolution lines
-    this.pokedex.getTypes().subscribe(types => {
-      this.types = types;
-    });
-
-    this.pokedex.getEvolutionLines().subscribe(lines => {
-      this.evolutionLines = lines;
-    });
-
-    // Load pokemon details
     const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
+    if (!id) {
+      this.error = 'ID du Pokémon manquant';
+      this.loading = false;
+      return;
+    }
+
+    // Load types and evolution lines first, then load pokemon
+    Promise.all([
+      this.pokedex.getTypes().toPromise(),
+      this.pokedex.getEvolutionLines().toPromise()
+    ]).then(([types, lines]) => {
+      this.types = types || [];
+      this.evolutionLines = lines || [];
+      
+      // Now load pokemon details with types and evolution lines ready
       this.pokedex.getById(id).subscribe({
         next: (pokemon) => {
           this.pokemon = pokemon;
@@ -53,10 +57,11 @@ export class PokemonDetailComponent implements OnInit {
           console.error(err);
         },
       });
-    } else {
-      this.error = 'ID du Pokémon manquant';
+    }).catch((err) => {
+      this.error = 'Impossible de charger les données';
       this.loading = false;
-    }
+      console.error(err);
+    });
   }
 
   goBack() {
