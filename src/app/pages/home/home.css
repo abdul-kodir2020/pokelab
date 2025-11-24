@@ -153,21 +153,21 @@
 }
 
 .container_page_1 .column.active .bg.bg1 {
-    background-image: url('/img/eevee-pokemon-2k-wallpaper-uhdpaper.com-1012a.jpeg');
+    background-image: url('/img/eevee-pokemon-2k-wallpaper-uhdpaper.com-1012a.jpg');
     background-size: cover;
 /*     background-attachment: fixed; */
     background-position: center;
     transition: 0.5s;
 }
 .container_page_1 .column.active .bg.bg2 {
-    background: url('/img/1070622.jpg');
+    background: url('/img/piplup-pokemon-2k-wallpaper-uhdpaper.com-2595d.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     transition: 0.5s;
 }
 .container_page_1 .column.active .bg.bg3 {
-    background: url('/img/bulbasaur-pokemon-2k-wallpaper-uhdpaper.com-972a.jpeg');
+    background: url('/img/bulbasaur-pokemon-2k-wallpaper-uhdpaper.com-972a.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
