@@ -35,11 +35,18 @@ export class PokemonListComponent implements OnInit {
   hasActiveFilter = false;
   showEmptyMessage = false;
   showFavoritesOnly = false;
+  collectorMode = false;
 
   ngOnInit(): void {
     this.currentUser$ = this.authService.currentUser$;
     this.loadTypes();
     this.load();
+    this.loadCollectorMode();
+  }
+
+  private loadCollectorMode() {
+    const saved = localStorage.getItem('collectorMode');
+    this.collectorMode = saved ? JSON.parse(saved) : false;
   }
 
   loadTypes() {
@@ -77,6 +84,11 @@ export class PokemonListComponent implements OnInit {
   toggleFavoritesView() {
     this.showFavoritesOnly = !this.showFavoritesOnly;
     this.applyFiltersAndFavorites();
+  }
+
+  toggleCollectorMode() {
+    this.collectorMode = !this.collectorMode;
+    localStorage.setItem('collectorMode', JSON.stringify(this.collectorMode));
   }
 
   private applyFiltersAndFavorites() {

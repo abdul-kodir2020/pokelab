@@ -19,6 +19,9 @@
     <div class="sticky-bar">
         <div class="sticky-bar-content">
             <app-search-bar [types]="types" [onFilterChange]="onFilterChange.bind(this)"></app-search-bar>
+            <button class="btn-collector" [class.active]="collectorMode" (click)="toggleCollectorMode()" title="Mode Collector">
+                🎨 Collector
+            </button>
             <button class="btn-favorites" [class.active]="showFavoritesOnly" (click)="toggleFavoritesView()" title="Afficher les favoris">
                 {{ showFavoritesOnly ? '⭐ Favoris' : '☆ Favoris' }}
             </button>
@@ -42,7 +45,7 @@
                 </button>
             </div>
         } @else {
-            <app-pokedex-list [pokemons$]="displayedPokemons$" [types]="types"></app-pokedex-list>
+            <app-pokedex-list [pokemons$]="displayedPokemons$" [types]="types" [collectorMode]="collectorMode"></app-pokedex-list>
         }
     </div>
     <a routerLink="/pokedex/creer" class="fab-create-pokemon">
