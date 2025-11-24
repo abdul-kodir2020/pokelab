@@ -160,13 +160,13 @@ export class PokemonDetailComponent implements OnInit {
     let newImageUrl = this.pokemon.imageUrl;
     let hasEvolved = false;
 
-    if (this.pokemon.level >= 32 && this.evolutionLine.stage3) {
+    if (this.pokemon.level >= 10 && this.evolutionLine.stage3) {
       if (this.pokemon.imageUrl !== this.evolutionLine.stage3) {
         this.evolutionBeforeImage = this.pokemon.imageUrl;
         newImageUrl = this.evolutionLine.stage3;
         hasEvolved = true;
       }
-    } else if (this.pokemon.level >= 16 && this.evolutionLine.stage2) {
+    } else if (this.pokemon.level >= 5 && this.evolutionLine.stage2) {
       if (this.pokemon.imageUrl !== this.evolutionLine.stage2) {
         this.evolutionBeforeImage = this.pokemon.imageUrl;
         newImageUrl = this.evolutionLine.stage2;

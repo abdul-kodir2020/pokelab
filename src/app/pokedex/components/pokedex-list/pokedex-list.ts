@@ -5,12 +5,12 @@ import { Pokemon, PokemonType } from '../../../shared/models/pokemon.model';
 import { RouterModule } from '@angular/router';
 import { Pokedex } from '../../../shared/services/pokedex';
 import { PokemonNamePipe } from '../../../shared/pipes/pokemon-name.pipe';
-import { FavoriteDirective } from '../../../shared/directives/favorite.directive';
+import { FavoriteStarDirective } from '../../../shared/directives/favorite-star.directive';
 
 @Component({
   selector: 'app-pokedex-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, PokemonNamePipe, FavoriteDirective],
+  imports: [CommonModule, RouterModule, PokemonNamePipe, FavoriteStarDirective],
   templateUrl: './pokedex-list.html',
   styleUrls: ['./pokedex-list.css'],
 })

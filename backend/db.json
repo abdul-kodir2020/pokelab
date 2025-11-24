@@ -192,19 +192,6 @@
       "currentClicks": 0
     },
     {
-      "id": "3f51",
-      "name": "Lost",
-      "typeId": "2",
-      "evolutionLineId": "31",
-      "hp": 70,
-      "attack": 30,
-      "level": 1,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/258.webp",
-      "userId": "d673",
-      "isFavorite": true,
-      "currentClicks": 0
-    },
-    {
       "id": "1b35",
       "name": "noir",
       "typeId": "6",
@@ -222,10 +209,10 @@
       "name": "naky",
       "typeId": "4",
       "evolutionLineId": "49",
-      "hp": 75,
-      "attack": 100,
-      "level": 16,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/404.webp",
+      "hp": 63,
+      "attack": 82,
+      "level": 10,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/405.webp",
       "userId": "d673",
       "isFavorite": true,
       "currentClicks": 0
@@ -240,7 +227,7 @@
       "level": 1,
       "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/532.webp",
       "userId": "d673",
-      "isFavorite": true,
+      "isFavorite": false,
       "currentClicks": 0
     },
     {
@@ -252,6 +239,19 @@
       "attack": 70,
       "level": 1,
       "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/280.webp",
+      "userId": "d673",
+      "isFavorite": true,
+      "currentClicks": 0
+    },
+    {
+      "id": "8410",
+      "name": "Draco",
+      "typeId": "2",
+      "evolutionLineId": "62",
+      "hp": 86,
+      "attack": 34,
+      "level": 5,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/634.webp",
       "userId": "d673",
       "isFavorite": false,
       "currentClicks": 0
