@@ -21,9 +21,7 @@ export class PokedexListComponent implements OnInit {
 
   private pokedex = inject(Pokedex);
 
-  ngOnInit(): void {
-    // Component lifecycle management
-  }
+  ngOnInit(): void {}
 
   trackById = (_: number, p: Pokemon) => p.id;
 

@@ -1,14 +1,9 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": "d673",
       "username": "dresseur",
       "password": "test"
-    },
-    {
-      "id": "d673",
-      "username": "abdul-kodir",
-      "password": "azertyui"
     }
   ],
   "types": [
@@ -88,110 +83,6 @@
   ],
   "creatures": [
     {
-      "id": "29c1",
-      "userId": "1",
-      "name": "biz",
-      "typeId": "4",
-      "evolutionLineId": "22",
-      "hp": 45,
-      "attack": 55,
-      "level": 1,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/172.webp",
-      "isFavorite": false,
-      "currentClicks": 0
-    },
-    {
-      "id": "b200",
-      "name": "roman dmitri",
-      "typeId": "1",
-      "evolutionLineId": "30",
-      "hp": 44,
-      "attack": 66,
-      "level": 3,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/255.webp",
-      "userId": "1",
-      "isFavorite": false,
-      "currentClicks": 0
-    },
-    {
-      "id": "cc29",
-      "name": "test",
-      "typeId": "6",
-      "evolutionLineId": "15",
-      "hp": 130,
-      "attack": 20,
-      "level": 11,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/69.webp",
-      "userId": "1",
-      "isFavorite": false,
-      "currentClicks": 0
-    },
-    {
-      "id": "42c3",
-      "name": "planta",
-      "typeId": "3",
-      "evolutionLineId": "19",
-      "hp": 105,
-      "attack": 70,
-      "level": 16,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/153.webp",
-      "userId": "1",
-      "isFavorite": false,
-      "currentClicks": 7
-    },
-    {
-      "id": "2d5e",
-      "name": "naky",
-      "typeId": "4",
-      "evolutionLineId": "47",
-      "hp": 75,
-      "attack": 100,
-      "level": 16,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/394.webp",
-      "userId": "1",
-      "isFavorite": false,
-      "currentClicks": 0
-    },
-    {
-      "id": "1441",
-      "name": "psycho",
-      "typeId": "5",
-      "evolutionLineId": "4",
-      "hp": 45,
-      "attack": 130,
-      "level": 16,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/11.webp",
-      "userId": "1",
-      "isFavorite": true,
-      "currentClicks": 0
-    },
-    {
-      "id": "8604",
-      "name": "mimi",
-      "typeId": "5",
-      "evolutionLineId": "23",
-      "hp": 30,
-      "attack": 70,
-      "level": 1,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/173.webp",
-      "userId": "1",
-      "isFavorite": false,
-      "currentClicks": 0
-    },
-    {
-      "id": "4985",
-      "name": "ratonchat",
-      "typeId": "5",
-      "evolutionLineId": "7",
-      "hp": 30,
-      "attack": 70,
-      "level": 1,
-      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/32.webp",
-      "userId": "1",
-      "isFavorite": false,
-      "currentClicks": 0
-    },
-    {
       "id": "1b35",
       "name": "noir",
       "typeId": "6",
@@ -222,13 +113,13 @@
       "name": "Escanor",
       "typeId": "1",
       "evolutionLineId": "63",
-      "hp": 40,
-      "attack": 60,
-      "level": 1,
+      "hp": 46,
+      "attack": 69,
+      "level": 4,
       "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/532.webp",
       "userId": "d673",
       "isFavorite": false,
-      "currentClicks": 0
+      "currentClicks": 8
     },
     {
       "id": "c2a8",
@@ -255,6 +146,45 @@
       "userId": "d673",
       "isFavorite": false,
       "currentClicks": 0
+    },
+    {
+      "id": "76bf",
+      "name": "Bouliplante",
+      "typeId": "3",
+      "evolutionLineId": "50",
+      "hp": 60,
+      "attack": 40,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/406.webp",
+      "userId": "d673",
+      "isFavorite": false,
+      "currentClicks": 0
+    },
+    {
+      "id": "9467",
+      "name": "liche",
+      "typeId": "5",
+      "evolutionLineId": "56",
+      "hp": 30,
+      "attack": 70,
+      "level": 1,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/355.webp",
+      "userId": "d673",
+      "isFavorite": false,
+      "currentClicks": 0
+    },
+    {
+      "id": "029b",
+      "name": "Mouton éclair",
+      "typeId": "4",
+      "evolutionLineId": "25",
+      "hp": 63,
+      "attack": 82,
+      "level": 10,
+      "imageUrl": "https://qvexmeaxafazljnlsjbi.supabase.co/storage/v1/object/public/pokedex/large/181.webp",
+      "userId": "d673",
+      "isFavorite": false,
+      "currentClicks": 1
     }
   ],
   "evolution_lines": [
