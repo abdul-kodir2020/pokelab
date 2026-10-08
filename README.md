@@ -1,10 +1,10 @@
-# 🎮 PokéLab - Application de Gestion de Pokémon
+# PokéLab - Application de Gestion de Pokémon
 
 PokéLab est une application **Angular 20.3.0** complète permettant aux utilisateurs de créer, entraîner et gérer leur propre équipe de Pokémon. L'application combine une authentification sécurisée, une gestion d'état réactive et des fonctionnalités de gameplay avancées.
 
 ---
 
-## 📋 Table des matières
+## Table des matières
 
 1. [Démarrage rapide](#démarrage-rapide)
 2. [Fonctionnalités principales](#fonctionnalités-principales)
@@ -15,7 +15,7 @@ PokéLab est une application **Angular 20.3.0** complète permettant aux utilisa
 
 ---
 
-## 🚀 Démarrage rapide
+## Démarrage rapide
 
 ### Prérequis
 - **Node.js** 18+ et **npm** 9+
@@ -54,9 +54,9 @@ Mot de passe: test
 
 ---
 
-## ✨ Fonctionnalités principales
+## Fonctionnalités principales
 
-### 1. 🔐 Authentification & Inscription
+### 1. Authentification & Inscription
 
 - **Système de login/register** sécurisé
 - Validation des formulaires réactifs
@@ -67,7 +67,7 @@ Mot de passe: test
 
 ---
 
-### 2. 🎮 Entraînement et Montée en Niveau
+### 2. Entraînement et Montée en Niveau
 
 L'entraînement est au cœur du gameplay. Voici comment ça marche:
 
@@ -80,7 +80,7 @@ L'entraînement est au cœur du gameplay. Voici comment ça marche:
 #### Interface d'entraînement
 1. Aller sur la **page détail** d'un Pokémon
 2. Section "Entraîner mon Pokémon"
-3. Cliquer le bouton **💪 Entraîner**
+3. Cliquer le bouton **Entraîner**
 4. Le compteur de clics augmente
 5. Une barre de progression affiche l'avancement
 
@@ -104,7 +104,7 @@ clicksNeeded = 10 + (currentLevel - 1)
 ```
 ---
 
-### 3. 🔄 Évolution des Pokémon
+### 3. Évolution des Pokémon
 
 L'évolution est déclenchée **automatiquement** lors de l'entraînement selon le niveau:
 
@@ -135,11 +135,11 @@ Stage 1          Stage 2                   Stage 3
 ```
 ---
 
-### 4. ⭐ Système de Favoris
+### 4. Système de Favoris
 
 Marquez vos Pokémon préférés comme favoris:
 
-- **Badge ⭐** visible sur chaque carte
+- **Badge ** visible sur chaque carte
 - **Filtrage par favoris**: Afficher uniquement les favoris
 - **Toggle au clic**: Cliquer l'étoile pour ajouter/retirer des favoris
 - **Persistance**: Sauvegardé automatiquement en base de données
@@ -148,12 +148,12 @@ Marquez vos Pokémon préférés comme favoris:
 
 ---
 
-### 5. 🎨 Mode Collector
+### 5. Mode Collector
 
 Mode spécial pour afficher votre collection de manière esthétique:
 
 #### Activation
-- Toggle **🎨 Collector ON/OFF** dans la barre sticky du Pokédex
+- Toggle **Collector ON/OFF** dans la barre sticky du Pokédex
 - État persisté dans localStorage
 
 #### Fonctionnalités
@@ -185,7 +185,7 @@ Mode Collector ON:
 ```
 ---
 
-### 6. 🔍 Recherche et Filtrage
+### 6. Recherche et Filtrage
 
 Trouvez facilement votre Pokémon:
 
@@ -208,7 +208,7 @@ Exemple: "pika" + Type "Électrik" + Level 5-10 + Favoris
 ```
 ---
 
-### 7. 🖼️ Gestion d'Images Optimisée
+### 7. Gestion d'Images Optimisée
 
 Cache d'images haute performance:
 
@@ -237,41 +237,41 @@ Cache d'images haute performance:
 
 ---
 
-## 📚 Vérification des Requirements
+## Vérification des Requirements
 
 La documentation complète des requirements est disponible dans: **[REQUIREMENTS_VERIFICATION.md](./REQUIREMENTS_VERIFICATION.md)**
 
 Ce fichier détaille:
 
-### ✅ Critères Angular implémentés
+### Critères Angular implémentés
 
 | Critère | Requirement | Implémenté | Détail |
 |---------|------------|-----------|--------|
-| 🔐 Authentification | Requise | ✅ Oui | Login, Register, AuthGuard |
-| 📱 Inscription | Requise | ✅ Oui | Formulaire réactif + validation |
-| 🗺️ Routing | Min: 3 | ✅ 7 routes | Protégé + paramètres |
-| 🧩 Composants | Min: 1/page | ✅ 11 composants | Réutilisables |
-| 🔄 Composant réutilisé | 2+ fois | ✅ Logo (4x) | Home, Login, Register, Pokedex |
-| 📤 @Input | Min: 1 | ✅ 9 inputs | Multiples composants |
-| 📨 @Output | Min: 1 | ✅ 1 output | DetailEvolutionComponent |
-| 🔧 Services | Min: 2 | ✅ 6 services | Auth, Pokedex, Cache, Export, etc |
-| 🌐 HTTP | Requise | ✅ Oui | HttpClient complète |
-| 💾 Tables DB | Min: 3 | ✅ 4 tables | users, types, creatures, evolution_lines |
-| 📝 Reactive Forms | Min: 3 fields | ✅ 7 fields | Login, Register, Pokemon Form |
-| ✔️ Custom Validator | Min: 1 | ✅ 2 validators | nameUniqueValidator (async) |
-| 🔄 Custom Pipe | Min: 1 | ✅ 1 pipe | PokemonNamePipe |
-| 📍 Custom Directive | Min: 1 | ✅ 1 directive | FavoriteStar |
+| Authentification | Requise | ✅ Oui | Login, Register, AuthGuard |
+| Inscription | Requise | ✅ Oui | Formulaire réactif + validation |
+| Routing | Min: 3 | ✅ 7 routes | Protégé + paramètres |
+| Composants | Min: 1/page | ✅ 11 composants | Réutilisables |
+| Composant réutilisé | 2+ fois | ✅ Logo (4x) | Home, Login, Register, Pokedex |
+| @Input | Min: 1 | ✅ 9 inputs | Multiples composants |
+| @Output | Min: 1 | ✅ 1 output | DetailEvolutionComponent |
+| Services | Min: 2 | ✅ 6 services | Auth, Pokedex, Cache, Export, etc |
+| HTTP | Requise | ✅ Oui | HttpClient complète |
+| Tables DB | Min: 3 | ✅ 4 tables | users, types, creatures, evolution_lines |
+| Reactive Forms | Min: 3 fields | ✅ 7 fields | Login, Register, Pokemon Form |
+| Custom Validator | Min: 1 | ✅ 2 validators | nameUniqueValidator (async) |
+| Custom Pipe | Min: 1 | ✅ 1 pipe | PokemonNamePipe |
+| Custom Directive | Min: 1 | ✅ 1 directive | FavoriteStar |
 
 ---
 
-## 📖 Documentation détaillée des fonctionnalités
+## Documentation détaillée des fonctionnalités
 
-### 🎯 Page d'accueil (Home)
+### Page d'accueil (Home)
 - Présentation de l'application
 - Boutons Login/Register
 - Call-to-action clear
 
-### 🔐 Authentification (Login/Register)
+### Authentification (Login/Register)
 **Files**:
 - `src/app/auth/login/login.ts`
 - `src/app/auth/register/register.ts`
@@ -287,7 +287,7 @@ Ce fichier détaille:
 - Redirection automatique après succès
 - Session persistée dans localStorage
 
-### 📱 Page Pokédex (Protégée par AuthGuard)
+### Page Pokédex (Protégée par AuthGuard)
 **File**: `src/app/pokedex/pages/list/list.ts`
 
 **Fonctionnalités**:
@@ -297,7 +297,7 @@ Ce fichier détaille:
 - Mode Collector toggle
 - Barre sticky avec filtres
 
-### 🔍 Page Détails (Detail Component)
+### Page Détails (Detail Component)
 **File**: `src/app/pokedex/pages/detail/detail.ts`
 
 **Contenu**:
@@ -306,14 +306,14 @@ Ce fichier détaille:
 - **Section d'entraînement** interactive
 - **Indicateur de progression** vers niveau suivant
 - **Floating Action Buttons**:
-  - ⭐ Toggle Favori
-  - ✏️ Éditer le Pokémon
-  - 🗑️ Supprimer le Pokémon
+  - Toggle Favori
+  - Éditer le Pokémon
+  - Supprimer le Pokémon
 - **Section Évolution** avec modal animée
 - **Faiblesses du type** affichées en badges
 - **Animations fluides** (level up, évolution)
 
-### ✏️ Formulaire de Création/Édition
+### Formulaire de Création/Édition
 **File**: `src/app/pokedex/pages/form/form.ts`
 
 **7 FormControls**:
@@ -342,7 +342,7 @@ Ce fichier détaille:
 
 ---
 
-## 🛠️ Commandes disponibles
+## Commandes disponibles
 
 ### Développement
 ```bash
@@ -358,15 +358,15 @@ npm run server
 ```
 ---
 
-## 🎯 Résumé des features uniques
+## Résumé des features uniques
 
 | Feature | Description | Déclencheur |
 |---------|-------------|------------|
-| 🎮 **Entraînement dynamique** | 10 clics = 1 niveau, stats augmentent | Page détail → Bouton 💪 |
-| 🔄 **Évolution auto** | Change image au niveau requis | Niveau 5 & 10 |
-| ⭐ **Système de favoris** | Filtrage et badge visuel | Clic sur l'étoile |
-| 🎨 **Mode Collector** | Fonds thématiques par type | Toggle 🎨 |
-| 📥 **Export PNG** | Génère carte avec stats | Clic sur 📥 |
-| 🔍 **Cache d'images** | 100 images max, FIFO evict | Automatique |
-| 🔐 **Auth complète** | Login, Register, Guard | Page login |
-| 📊 **Validation async** | Unique name check | Formulaire |
+| **Entraînement dynamique** | 10 clics = 1 niveau, stats augmentent | Page détail → Bouton 💪 |
+| **Évolution auto** | Change image au niveau requis | Niveau 5 & 10 |
+| **Système de favoris** | Filtrage et badge visuel | Clic sur l'étoile |
+| **Mode Collector** | Fonds thématiques par type | Toggle 🎨 |
+| **Export PNG** | Génère carte avec stats | Clic sur 📥 |
+| **Cache d'images** | 100 images max, FIFO evict | Automatique |
+| **Auth complète** | Login, Register, Guard | Page login |
+| **Validation async** | Unique name check | Formulaire |
